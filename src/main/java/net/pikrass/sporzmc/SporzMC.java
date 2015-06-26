@@ -1,7 +1,12 @@
 package net.pikrass.sporzmc;
 
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
+
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+
+import net.pikrass.sporzmc.commands.CommandSporz;
 
 @Mod(
 	modid   = SporzMC.MODID,
@@ -19,4 +24,9 @@ public class SporzMC
 
 	@Instance(SporzMC.MODID)
 	public static SporzMC instance;
+
+	@EventHandler
+	public void serverLoad(FMLServerStartingEvent event) {
+		event.registerServerCommand(new CommandSporz());
+	}
 }

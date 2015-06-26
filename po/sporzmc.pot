@@ -1,0 +1,44 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-26 19:23+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:33
+msgid "/sporz <command|help>"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:38
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:46
+msgid "help"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:54
+msgid "Unknown command. Try /sporz help for a list of commands"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:90
+msgid "Available sporz commands:"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/SporzSubcommand.java:22
+#: src/main/java/net/pikrass/sporzmc/commands/SporzSubcommand.java:33
+msgid "/sporz "
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/SporzSubcommand.java:29
+msgid "Usage: /sporz "
+msgstr ""
