@@ -26,6 +26,32 @@ minecraft {
 	mappings = "snapshot_20141130"
 }
 
+task buildPot << {
+	exec {
+		commandLine 'bash', '-c', "xgettext -L java --from-code utf-8 -k_ -o po/sporzmc.pot \$(find src/main/java/net/pikrass/sporzmc -name '*.java')"
+	}
+}
+
+repositories {
+	maven {
+		name = "gettext-commons"
+		url = "https://gettext-commons.googlecode.com/svn/maven-repository/"
+	}
+}
+
+List libs = [
+	"org.xnap.commons:gettext-commons:0.9.6"
+]
+
+configurations {
+	mergeLibs
+}
+
+dependencies {
+	mergeLibs libs
+		compile libs
+}
+
 processResources
 {
 	// this will ensure that this task is redone when the versions change.
@@ -44,4 +70,8 @@ processResources
 	from(sourceSets.main.resources.srcDirs) {
 		exclude 'mcmod.info'
 	}
+}
+
+jar {
+	from configurations.mergeLibs.collect { zipTree(it) }
 }
