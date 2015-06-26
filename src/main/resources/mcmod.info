@@ -1,0 +1,17 @@
+[
+	{
+		modid: "Sporz MC",
+		name: "Sporz MC",
+		description: "TODO",
+        authorList: ["Pikrass"],
+		url: "",
+		updateUrl: "",
+
+		version: "${version}",
+		mcversion: "${mcversion}",
+        credits: "Pikrass, 2015",
+		logoFile: "",
+		screenshots: [],
+		dependencies: []
+	}
+]
