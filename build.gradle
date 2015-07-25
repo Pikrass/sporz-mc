@@ -40,7 +40,8 @@ repositories {
 }
 
 List libs = [
-	"org.xnap.commons:gettext-commons:0.9.6"
+	"org.xnap.commons:gettext-commons:0.9.6",
+	project(':lib:sporz')
 ]
 
 configurations {
@@ -49,7 +50,7 @@ configurations {
 
 dependencies {
 	mergeLibs libs
-		compile libs
+	compile libs
 }
 
 processResources

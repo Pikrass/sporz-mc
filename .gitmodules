@@ -1,0 +1,3 @@
+[submodule "lib/sporz"]
+	path = lib/sporz
+	url = git://github.com/Pikrass/sporz.git
