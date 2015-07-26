@@ -18,20 +18,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:41
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:42
 msgid "/sporz <command|help>"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:46
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:54
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:47
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:55
 msgid "help"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:62
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:63
 msgid "Unknown command. Try /sporz help for a list of commands"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:98
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:99
 msgid "Available sporz commands:"
 msgstr ""
 
@@ -92,6 +92,8 @@ msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandPlayers.java:41
 #: src/main/java/net/pikrass/sporzmc/commands/CommandPlayers.java:107
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:40
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:118
 msgid "init"
 msgstr ""
 
@@ -125,4 +127,137 @@ msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandPlayers.java:99
 msgid "Player %s removed"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:20
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:31
+msgid "rules"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:25
+msgid "rules (init|set <var> <num>)"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:32
+msgid "rules init"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:33
+msgid "rules set <var> <num>"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:42
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:119
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:120
+msgid "set"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:57
+msgid "HOSTS = %d"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:58
+msgid "RESISTANTS = %d"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:59
+msgid "MUTANTS = %d"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:60
+msgid "DOCTORS = %d"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:61
+msgid "PSYCHOLOGISTS = %d"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:62
+msgid "GENETICISTS = %d"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:63
+msgid "COMPUTER_ENGINEERS = %d"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:64
+msgid "HACKERS = %d"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:65
+msgid "SPIES = %d"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:66
+msgid "TRAITORS = %d"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:77
+msgid "Rules set"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:79
+msgid "Not enough players"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:86
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:121
+msgid "HOSTS"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:88
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:122
+msgid "RESISTANTS"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:90
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:123
+msgid "MUTANTS"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:92
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:124
+msgid "DOCTORS"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:94
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:125
+msgid "PSYCHOLOGISTS"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:96
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:126
+msgid "GENETICISTS"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:98
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:127
+msgid "COMPUTER_ENGINEERS"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:100
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:128
+msgid "HACKERS"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:102
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:129
+msgid "SPIES"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:104
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:130
+msgid "TRAITORS"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:107
+msgid "Unknown rule"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:111
+msgid "Rule set"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:118
+msgid "Rules"
 msgstr ""

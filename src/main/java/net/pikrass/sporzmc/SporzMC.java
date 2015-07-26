@@ -10,6 +10,8 @@ import net.minecraftforge.common.config.Configuration;
 
 import net.pikrass.sporzmc.commands.CommandSporz;
 
+import net.pikrass.sporz.CustomRules;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,15 +42,21 @@ public class SporzMC
 	public void serverLoad(FMLServerStartingEvent event) {
 		event.registerServerCommand(new CommandSporz());
 		players = new HashMap<String, MCPlayer>();
+		rules = new CustomRules();
 	}
 
 
 
 	private Configuration config;
 	private Map<String, MCPlayer> players;
+	private CustomRules rules;
 
 	public static Map<String, MCPlayer> getPlayers() {
 		return instance.players;
+	}
+
+	public static CustomRules getRules() {
+		return instance.rules;
 	}
 
 	public static boolean devMode() {
