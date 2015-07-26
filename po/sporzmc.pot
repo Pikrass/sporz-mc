@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-26 19:34+0200\n"
+"POT-Creation-Date: 2015-07-26 19:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,20 +18,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:38
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:41
 msgid "/sporz <command|help>"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:43
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:51
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:46
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:54
 msgid "help"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:59
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:62
 msgid "Unknown command. Try /sporz help for a list of commands"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:95
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:98
 msgid "Available sporz commands:"
 msgstr ""
 
@@ -42,6 +42,31 @@ msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/SporzSubcommand.java:29
 msgid "Usage: /sporz "
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:26
+msgid "dev"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:31
+msgid "dev pigs reset|<num>"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:37
+msgid "dev pigs reset"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:38
+msgid "dev pigs <num>"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:96
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:97
+msgid "pigs"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:98
+msgid "reset"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandPlayers.java:20

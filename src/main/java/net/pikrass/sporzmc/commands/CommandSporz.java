@@ -24,6 +24,9 @@ public class CommandSporz extends CommandBase
 		LinkedList<SporzSubcommand> cmds = new LinkedList<SporzSubcommand>();
 		cmds.add(new CommandPlayers());
 
+		if(SporzMC.devMode())
+			cmds.add(new CommandDev());
+
 		for(SporzSubcommand cmd : cmds)
 			subCommands.put(cmd.getName(), cmd);
 	}
