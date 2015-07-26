@@ -13,6 +13,10 @@ public final class I18n
 		return i.tr(str);
 	}
 
+	public static String _(String str, String plural, int n) {
+		return i.trn(str, plural, n);
+	}
+
 	private I18n() {
 	}
 }

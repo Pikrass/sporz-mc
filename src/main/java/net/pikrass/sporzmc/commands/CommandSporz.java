@@ -21,6 +21,11 @@ public class CommandSporz extends CommandBase
 		new HashMap<String, SporzSubcommand>();
 
 	public CommandSporz() {
+		LinkedList<SporzSubcommand> cmds = new LinkedList<SporzSubcommand>();
+		cmds.add(new CommandPlayers());
+
+		for(SporzSubcommand cmd : cmds)
+			subCommands.put(cmd.getName(), cmd);
 	}
 
 	@Override

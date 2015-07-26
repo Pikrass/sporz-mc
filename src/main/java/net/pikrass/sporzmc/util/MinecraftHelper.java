@@ -1,5 +1,6 @@
 package net.pikrass.sporzmc.util;
 
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.command.ICommandSender;
 
@@ -39,6 +40,19 @@ public class MinecraftHelper
 
 	public static void sendMsg(ICommandSender recv, String msg) {
 		recv.addChatMessage(new ChatComponentText(msg));
+	}
+
+	public static boolean isOp(String username) {
+		username = username.toLowerCase().trim();
+		String[] ops = MinecraftServer.getServer().getConfigurationManager()
+			.getOppedPlayers().getKeys();
+
+		for(String name : ops) {
+			if(name.toLowerCase().equals(username))
+				return true;
+		}
+
+		return false;
 	}
 
 	private MinecraftHelper() {

@@ -8,6 +8,9 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
 import net.pikrass.sporzmc.commands.CommandSporz;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Mod(
 	modid   = SporzMC.MODID,
 	name    = SporzMC.MODNAME,
@@ -28,5 +31,14 @@ public class SporzMC
 	@EventHandler
 	public void serverLoad(FMLServerStartingEvent event) {
 		event.registerServerCommand(new CommandSporz());
+		players = new HashMap<String, MCPlayer>();
+	}
+
+
+
+	private Map<String, MCPlayer> players;
+
+	public static Map<String, MCPlayer> getPlayers() {
+		return instance.players;
 	}
 }
