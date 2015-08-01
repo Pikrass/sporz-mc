@@ -10,6 +10,7 @@ import net.minecraftforge.common.config.Configuration;
 
 import net.pikrass.sporzmc.commands.CommandSporz;
 
+import net.pikrass.sporz.Game;
 import net.pikrass.sporz.CustomRules;
 
 import java.util.HashMap;
@@ -48,11 +49,40 @@ public class SporzMC
 
 
 	private Configuration config;
+	private Game game;
 	private Map<String, MCPlayer> players;
 	private CustomRules rules;
 
+	public static void startGame() {
+		instance.game.start();
+	}
+
+	public static Game getGame() {
+		return instance.game;
+	}
+
+	public static Game initGame() {
+		if(instance.game != null)
+			instance.game.end();
+		instance.game = new Game();
+		return instance.game;
+	}
+
+	public static void endGame() {
+		if(instance.game != null)
+			instance.game.end();
+		instance.game = null;
+	}
+
 	public static Map<String, MCPlayer> getPlayers() {
 		return instance.players;
+	}
+
+	public static void useCurrentPlayers() {
+		if(instance.game == null)
+			return;
+		for(MCPlayer player : instance.players.values())
+			instance.game.addPlayer(player);
 	}
 
 	public static CustomRules getRules() {

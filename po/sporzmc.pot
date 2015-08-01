@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-26 19:36+0200\n"
+"POT-Creation-Date: 2015-08-01 18:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,20 +18,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:42
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:43
 msgid "/sporz <command|help>"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:47
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:55
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:48
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:56
 msgid "help"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:63
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:64
 msgid "Unknown command. Try /sporz help for a list of commands"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:99
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:100
 msgid "Available sporz commands:"
 msgstr ""
 
@@ -127,6 +127,16 @@ msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandPlayers.java:99
 msgid "Player %s removed"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:19
+#: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:24
+#: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:29
+msgid "start"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:41
+msgid "There aren't enough players for the configured rules"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:20
