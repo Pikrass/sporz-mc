@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-01 18:39+0200\n"
+"POT-Creation-Date: 2015-08-01 18:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,97 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:36
+msgid "========= DAY %d ========="
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:38
+msgid "======== NIGHT %d ========"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:44
+msgid "You are an astronaut"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:45
+msgid "You don't have any particular power"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:47
+msgid "You are a mutant"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:48
+msgid "You don't have any particular power, but you can't be healed"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:52
+msgid "You are a doctor"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:53
+msgid "Each night, if you're not a mutant, you can heal or kill players"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:63
+msgid "The other doctor is %s"
+msgid_plural "The other doctors are %s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:68
+msgid "You are a psychologist"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:69
+msgid "Each night you can see the state of another player (human or mutant)"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:72
+msgid "You are a geneticist"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:73
+msgid ""
+"Each night you can see the genome of another player (standard, host or "
+"resistant)"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:76
+msgid "You are a computer engineer"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:77
+msgid "Each night you can see the number of mutants on board"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:80
+msgid "You are a hacker"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:81
+msgid ""
+"Each night you can see what a psychologist, geneticist or computer engineer "
+"saw"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:84
+msgid "You are a spy"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:85
+msgid "Each night you can see what happened to another player"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:88
+msgid "You are a traitor"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:89
+msgid ""
+"Your goal is always to make the mutants win, regardless of your own state"
+msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:43
 msgid "/sporz <command|help>"
