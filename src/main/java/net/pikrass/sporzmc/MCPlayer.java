@@ -7,6 +7,7 @@ import net.pikrass.sporz.*;
 import net.pikrass.sporz.events.*;
 import net.pikrass.sporz.actions.*;
 
+import net.minecraft.command.ICommandSender;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.management.ServerConfigurationManager;
 import net.minecraft.entity.Entity;
@@ -21,6 +22,10 @@ public class MCPlayer extends Player {
 		ServerConfigurationManager manager =
 			MinecraftServer.getServer().getConfigurationManager();
 		return manager.getPlayerByUsername(getName());
+	}
+
+	public ICommandSender getCommandSender() {
+		return getEntity();
 	}
 
 	protected void sendMsg(String message) {

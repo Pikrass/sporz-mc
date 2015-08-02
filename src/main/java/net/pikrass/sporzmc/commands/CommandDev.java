@@ -4,6 +4,7 @@ import static net.pikrass.sporzmc.util.I18n.*;
 import static net.pikrass.sporzmc.util.MinecraftHelper.*;
 
 import net.minecraft.command.ICommandSender;
+import net.minecraft.command.CommandException;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.BlockPos;
@@ -17,6 +18,7 @@ import net.pikrass.sporzmc.*;
 import java.util.Map;
 import java.util.List;
 import java.util.LinkedList;
+import java.util.Arrays;
 
 import java.lang.reflect.*;
 public class CommandDev extends SporzSubcommand
@@ -28,14 +30,15 @@ public class CommandDev extends SporzSubcommand
 
 	@Override
 	public String getCommandShortUsage(ICommandSender sender) {
-		return _("dev pigs reset|<num>");
+		return _("dev [ pigs reset|<num> ] | [ <player> <cmd> ]");
 	}
 
 	@Override
 	public String getCommandUsage(ICommandSender sender) {
 		return
 			_("dev pigs reset")+"\n"+
-			_("dev pigs <num>");
+			_("dev pigs <num>")+"\n"+
+			_("dev <player> <cmd> <args>...");
 	}
 
 	@Override
@@ -50,6 +53,12 @@ public class CommandDev extends SporzSubcommand
 					printShortUsage(sender);
 				}
 			}
+		} else if(params.length >= 2) {
+			MCPlayer player = SporzMC.getPlayers().get(params[0]);
+			if(player == null)
+				printShortUsage(sender);
+			else
+				sendCommandAs(player, Arrays.copyOfRange(params, 1, params.length));
 		} else {
 			printShortUsage(sender);
 		}
@@ -89,13 +98,32 @@ public class CommandDev extends SporzSubcommand
 		}
 	}
 
+	private void sendCommandAs(MCPlayer player, String[] args) {
+		try {
+			SporzMC.getCommand().execute(player.getCommandSender(), args);
+		} catch(CommandException e) {
+		}
+	}
+
 	@Override
 	public List addTabCompletionOptions(ICommandSender sender, String[] args, BlockPos pos) {
 		List<String> list = new LinkedList<String>();
 		if(args.length == 1) {
-			list.add(_("pigs"));
-		} else if(args.length == 2 && args[1].equals(_("pigs"))) {
-			list.add(_("reset"));
+			if(_("pigs").startsWith(args[0]))
+				list.add(_("pigs"));
+			for(String name : SporzMC.getPlayers().keySet()) {
+				if(name.startsWith(args[0]))
+					list.add(name);
+			}
+		} else if(args.length == 2 && args[0].equals(_("pigs"))) {
+			if(_("reset").startsWith(args[1]))
+				list.add(_("reset"));
+		} else if(args.length >= 2) {
+			MCPlayer player = SporzMC.getPlayers().get(args[0]);
+			if(player != null)
+				return SporzMC.getCommand().addTabCompletionOptions(
+						player.getCommandSender(),
+						Arrays.copyOfRange(args, 1, args.length), pos);
 		}
 		return list;
 	}

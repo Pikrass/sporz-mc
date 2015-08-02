@@ -41,12 +41,18 @@ public class SporzMC
 
 	@EventHandler
 	public void serverLoad(FMLServerStartingEvent event) {
-		event.registerServerCommand(new CommandSporz());
+		command = new CommandSporz();
 		players = new HashMap<String, MCPlayer>();
 		rules = new CustomRules();
+		event.registerServerCommand(command);
 	}
 
 
+	private CommandSporz command;
+
+	public static CommandSporz getCommand() {
+		return instance.command;
+	}
 
 	private Configuration config;
 	private Game game;
