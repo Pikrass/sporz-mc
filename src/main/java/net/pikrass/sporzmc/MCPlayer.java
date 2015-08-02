@@ -2,6 +2,7 @@ package net.pikrass.sporzmc;
 
 import static net.pikrass.sporzmc.util.I18n.*;
 import static net.pikrass.sporzmc.util.MinecraftHelper.green;
+import static net.pikrass.sporzmc.util.MinecraftHelper.blue;
 
 import net.pikrass.sporz.*;
 import net.pikrass.sporz.events.*;
@@ -17,6 +18,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class MCPlayer extends Player {
 	private Map<Action, ActionHandler> handlers;
@@ -104,7 +106,13 @@ public class MCPlayer extends Player {
 		}
 	}
 	public void notify(NewCaptain event) {
-		//TODO
+		sendMsg(blue(_("Votes are closed. Results follow:")));
+		Iterator<Map.Entry<Player, Player>> it = event.voteIterator();
+		while(it.hasNext()) {
+			Map.Entry<Player, Player> vote = it.next();
+			sendMsg(String.format(_("%s voted for %s"), vote.getKey(), vote.getValue()));
+		}
+		sendMsg(blue(String.format(_("%s is elected captain!"), event.getWinner())));
 	}
 	public void notifyOrigin(Paralysis event) {
 		//TODO
@@ -156,7 +164,11 @@ public class MCPlayer extends Player {
 	}
 
 	public void ask(Game game, ElectCaptain action) {
-		//TODO
+		ElectCaptainHandler handler = new ElectCaptainHandler(game, this, action);
+		handlers.put(action, handler);
+		handler.start();
+
+		sendMsg(_("We are in need of a captain! Vote with the /sporz elect command"));
 	}
 	public void ask(Game game, MutantsActions action) {
 		//TODO

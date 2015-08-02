@@ -20,11 +20,19 @@ public class CommandSporz extends CommandBase
 	private final HashMap<String, SporzSubcommand> subCommands =
 		new HashMap<String, SporzSubcommand>();
 
+	private CommandClear commandClear;
+	private CommandElect commandElect;
+	private CommandDone commandDone;
+
 	public CommandSporz() {
 		LinkedList<SporzSubcommand> cmds = new LinkedList<SporzSubcommand>();
 		cmds.add(new CommandPlayers());
 		cmds.add(new CommandRules());
 		cmds.add(new CommandStart());
+
+		cmds.add(this.commandClear = new CommandClear());
+		cmds.add(this.commandElect = new CommandElect());
+		cmds.add(this.commandDone = new CommandDone());
 
 		if(SporzMC.devMode())
 			cmds.add(new CommandDev());
@@ -105,5 +113,20 @@ public class CommandSporz extends CommandBase
 			if(cmd.canCommandSenderUse(sender))
 				cmd.printSummary(sender);
 		}
+	}
+
+
+	/* ===== Command getters ===== */
+
+	public CommandClear getCommandClear() {
+		return commandClear;
+	}
+
+	public CommandElect getCommandElect() {
+		return commandElect;
+	}
+
+	public CommandDone getCommandDone() {
+		return commandDone;
 	}
 }
