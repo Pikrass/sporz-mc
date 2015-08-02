@@ -7,15 +7,23 @@ import net.pikrass.sporz.*;
 import net.pikrass.sporz.events.*;
 import net.pikrass.sporz.actions.*;
 
+import net.pikrass.sporzmc.handlers.*;
+
 import net.minecraft.command.ICommandSender;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.management.ServerConfigurationManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 
+import java.util.Map;
+import java.util.HashMap;
+
 public class MCPlayer extends Player {
+	private Map<Action, ActionHandler> handlers;
+
 	public MCPlayer(String username) {
 		super(username);
+		this.handlers = new HashMap<Action, ActionHandler>();
 	}
 
 	protected Entity getEntity() {
@@ -178,34 +186,43 @@ public class MCPlayer extends Player {
 		//TODO
 	}
 
+
+	private void genericStopAsking(Action action) {
+		ActionHandler handler = handlers.get(action);
+		if(handler != null) {
+			handler.stop();
+			handlers.remove(action);
+		}
+	}
+
 	public void stopAsking(ElectCaptain action) {
-		//TODO
+		genericStopAsking(action);
 	}
 	public void stopAsking(MutantsActions action) {
-		//TODO
+		genericStopAsking(action);
 	}
 	public void stopAsking(DoctorsAction action) {
-		//TODO
+		genericStopAsking(action);
 	}
 	public void stopAsking(Psychoanalyse action) {
-		//TODO
+		genericStopAsking(action);
 	}
 	public void stopAsking(Sequence action) {
-		//TODO
+		genericStopAsking(action);
 	}
 	public void stopAsking(Count action) {
-		//TODO
+		genericStopAsking(action);
 	}
 	public void stopAsking(Hack action) {
-		//TODO
+		genericStopAsking(action);
 	}
 	public void stopAsking(Spy action) {
-		//TODO
+		genericStopAsking(action);
 	}
 	public void stopAsking(Lynch action) {
-		//TODO
+		genericStopAsking(action);
 	}
 	public void stopAsking(SettleLynch action) {
-		//TODO
+		genericStopAsking(action);
 	}
 }
