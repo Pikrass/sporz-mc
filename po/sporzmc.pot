@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-02 20:32+0200\n"
+"POT-Creation-Date: 2015-09-04 22:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,128 +18,244 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:51
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:64
 msgid "========= DAY %d ========="
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:53
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:66
 msgid "======== NIGHT %d ========"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:59
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:72
 msgid "You are an astronaut"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:60
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:73
 msgid "You don't have any particular power"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:62
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:75
 msgid "You are a mutant"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:63
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:76
 msgid "You don't have any particular power, but you can't be healed"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:67
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:80
 msgid "You are a doctor"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:68
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:81
 msgid "Each night, if you're not a mutant, you can heal or kill players"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:78
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:91
 msgid "The other doctor is %s"
 msgid_plural "The other doctors are %s"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:83
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:96
 msgid "You are a psychologist"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:84
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:97
 msgid "Each night you can see the state of another player (human or mutant)"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:87
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:100
 msgid "You are a geneticist"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:88
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:101
 msgid ""
 "Each night you can see the genome of another player (standard, host or "
 "resistant)"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:91
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:104
 msgid "You are a computer engineer"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:92
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:105
 msgid "Each night you can see the number of mutants on board"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:95
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:108
 msgid "You are a hacker"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:96
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:109
 msgid ""
 "Each night you can see what a psychologist, geneticist or computer engineer "
 "saw"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:99
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:112
 msgid "You are a spy"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:100
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:113
 msgid "Each night you can see what happened to another player"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:103
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:116
 msgid "You are a traitor"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:104
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:117
 msgid ""
 "Your goal is always to make the mutants win, regardless of your own state"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:109
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:122
 msgid "Votes are closed. Results follow:"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:113
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:126
 msgid "%s voted for %s"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:115
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:128
 msgid "%s is elected captain!"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:171
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:131
+msgid "You paralysed %s"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:134
+msgid "You've been paralysed"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:137
+msgid "You try to mutate %s"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:142
+msgid "You've been mutated. You are now a mutant."
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:145
+msgid "An attempt was made to mutate you, but it failed!"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:148
+msgid "You've been mutated. It was useless."
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:154
+msgid "Mutants killed %s"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:156
+msgid "Doctors killed %s"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:198
+msgid "astronaut"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:199
+msgid "doctor"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:200
+msgid "psychologist"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:201
+msgid "geneticist"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:202
+msgid "computer engineer"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:203
+msgid "hacker"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:204
+msgid "spy"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:205
+msgid "traitor"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:209
+msgid "resistant"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:210
+msgid "standard"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:211
+msgid "host"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:215
+msgid "human"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:217
+msgid "mutant"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:219
+msgid "%s was %s, %s, %s"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:227
 msgid "We are in need of a captain! Vote with the /sporz elect command"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:51
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:234
+msgid "Mutants, you may now mutate or kill, in addition to paralyse, players"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:57
 msgid "/sporz <command|help>"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:56
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:64
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:62
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:70
 msgid "help"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:72
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:78
 msgid "Unknown command. Try /sporz help for a list of commands"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:108
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:114
 msgid "Available sporz commands:"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandKill.java:16
+msgid "kill"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandKill.java:21
+#: src/main/java/net/pikrass/sporzmc/commands/CommandKill.java:26
+msgid "kill <player>"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandKill.java:39
+#: src/main/java/net/pikrass/sporzmc/commands/CommandElect.java:40
+#: src/main/java/net/pikrass/sporzmc/commands/CommandParalyse.java:39
+#: src/main/java/net/pikrass/sporzmc/commands/CommandMutate.java:39
+msgid "This player doesn't exist"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandKill.java:43
+#: src/main/java/net/pikrass/sporzmc/commands/CommandElect.java:45
+#: src/main/java/net/pikrass/sporzmc/commands/CommandParalyse.java:43
+#: src/main/java/net/pikrass/sporzmc/commands/CommandMutate.java:43
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDone.java:29
+msgid "Your choice has been saved"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandElect.java:17
@@ -151,13 +267,13 @@ msgstr ""
 msgid "elect <player>"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandElect.java:40
-msgid "This player doesn't exist"
+#: src/main/java/net/pikrass/sporzmc/commands/CommandParalyse.java:16
+msgid "paralyse"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandElect.java:46
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDone.java:30
-msgid "Your choice has been saved"
+#: src/main/java/net/pikrass/sporzmc/commands/CommandParalyse.java:21
+#: src/main/java/net/pikrass/sporzmc/commands/CommandParalyse.java:26
+msgid "paralyse <player>"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/SporzSubcommand.java:22
@@ -198,6 +314,15 @@ msgstr ""
 #: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:119
 #: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:120
 msgid "reset"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandMutate.java:16
+msgid "mutate"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandMutate.java:21
+#: src/main/java/net/pikrass/sporzmc/commands/CommandMutate.java:26
+msgid "mutate <player>"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandPlayers.java:20
@@ -409,7 +534,7 @@ msgstr ""
 msgid "clear"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandClear.java:30
+#: src/main/java/net/pikrass/sporzmc/commands/CommandClear.java:29
 msgid "Your choice has been cleared"
 msgstr ""
 

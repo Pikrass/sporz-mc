@@ -1,6 +1,7 @@
 package net.pikrass.sporzmc;
 
 import static net.pikrass.sporzmc.util.I18n.*;
+import static net.pikrass.sporzmc.util.MinecraftHelper.red;
 import static net.pikrass.sporzmc.util.MinecraftHelper.green;
 import static net.pikrass.sporzmc.util.MinecraftHelper.blue;
 
@@ -13,6 +14,7 @@ import net.pikrass.sporzmc.handlers.*;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.management.ServerConfigurationManager;
+import net.minecraft.world.WorldSettings;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 
@@ -33,6 +35,17 @@ public class MCPlayer extends Player {
 			MinecraftServer.getServer().getConfigurationManager();
 		return manager.getPlayerByUsername(getName());
 	}
+
+
+	@Override
+	public void kill() {
+		super.kill();
+		Entity entity = getEntity();
+		entity.onKillCommand();
+		if(entity instanceof EntityPlayerMP)
+			((EntityPlayerMP)entity).setGameType(WorldSettings.GameType.SPECTATOR);
+	}
+
 
 	public ICommandSender getCommandSender() {
 		return getEntity();
@@ -115,19 +128,34 @@ public class MCPlayer extends Player {
 		sendMsg(blue(String.format(_("%s is elected captain!"), event.getWinner())));
 	}
 	public void notifyOrigin(Paralysis event) {
-		//TODO
+		sendMsg(blue(String.format(_("You paralysed %s"), event.getTarget())));
 	}
 	public void notifyTarget(Paralysis event) {
-		//TODO
+		sendMsg(red(_("You've been paralysed")));
 	}
 	public void notifyOrigin(Mutation.NoResult event) {
-		//TODO
+		sendMsg(blue(String.format(_("You try to mutate %s"), event.getTarget())));
 	}
 	public void notifyTarget(Mutation event) {
-		//TODO
+		switch(event.getResult()) {
+			case SUCCESS:
+				sendMsg(red(_("You've been mutated. You are now a mutant.")));
+				break;
+			case FAIL:
+				sendMsg(blue(_("An attempt was made to mutate you, but it failed!")));
+				break;
+			case USELESS:
+				sendMsg(blue(_("You've been mutated. It was useless.")));
+				break;
+		}
 	}
 	public void notify(Murder event) {
-		//TODO
+		if(event.getOrigin() == Murder.Origin.MUTANTS)
+			sendMsg(red(String.format(_("Mutants killed %s"), event.getTarget())));
+		else
+			sendMsg(red(String.format(_("Doctors killed %s"), event.getTarget())));
+
+		revealPlayer(event.getTarget());
 	}
 	public void notifyOrigin(Healing.NoResult event) {
 		//TODO
@@ -163,6 +191,34 @@ public class MCPlayer extends Player {
 		//TODO
 	}
 
+	private void revealPlayer(Player p) {
+		String r = "", g = "", s = "";
+
+		switch(p.getRole()) {
+			case ASTRONAUT:         r = _("astronaut"); break;
+			case DOCTOR:            r = _("doctor"); break;
+			case PSYCHOLOGIST:      r = _("psychologist"); break;
+			case GENETICIST:        r = _("geneticist"); break;
+			case COMPUTER_ENGINEER: r = _("computer engineer"); break;
+			case HACKER:            r = _("hacker"); break;
+			case SPY:               r = _("spy"); break;
+			case TRAITOR:           r = _("traitor"); break;
+		}
+
+		switch(p.getGenome()) {
+			case RESISTANT: g = _("resistant"); break;
+			case STANDARD:  g = _("standard"); break;
+			case HOST:      g = _("host"); break;
+		}
+
+		if(p.getState() == State.HUMAN)
+			s = _("human");
+		else
+			s = _("mutant");
+
+		sendMsg(red(String.format(_("%s was %s, %s, %s"), p, r, g, s)));
+	}
+
 	public void ask(Game game, ElectCaptain action) {
 		ElectCaptainHandler handler = new ElectCaptainHandler(game, this, action);
 		handlers.put(action, handler);
@@ -171,7 +227,12 @@ public class MCPlayer extends Player {
 		sendMsg(_("We are in need of a captain! Vote with the /sporz elect command"));
 	}
 	public void ask(Game game, MutantsActions action) {
-		//TODO
+		MutantsActionsHandler handler = new MutantsActionsHandler(game, this, action);
+		handlers.put(action, handler);
+		handler.start();
+
+		sendMsg(_("Mutants, you may now mutate or kill, in addition to paralyse, players"));
+		//TODO: tp
 	}
 	public void ask(Game game, DoctorsAction action) {
 		//TODO
