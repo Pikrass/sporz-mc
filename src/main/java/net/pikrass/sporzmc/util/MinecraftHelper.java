@@ -46,6 +46,10 @@ public class MinecraftHelper
 		return BLUE+m+RESET;
 	}
 
+	public static String gold(String m) {
+		return GOLD+m+RESET;
+	}
+
 	public static void sendMsg(ICommandSender recv, String msg) {
 		recv.addChatMessage(new ChatComponentText(msg));
 	}

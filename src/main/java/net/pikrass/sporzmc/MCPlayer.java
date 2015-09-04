@@ -4,6 +4,7 @@ import static net.pikrass.sporzmc.util.I18n.*;
 import static net.pikrass.sporzmc.util.MinecraftHelper.red;
 import static net.pikrass.sporzmc.util.MinecraftHelper.green;
 import static net.pikrass.sporzmc.util.MinecraftHelper.blue;
+import static net.pikrass.sporzmc.util.MinecraftHelper.gold;
 
 import net.pikrass.sporz.*;
 import net.pikrass.sporz.events.*;
@@ -234,14 +235,14 @@ public class MCPlayer extends Player {
 		handlers.put(action, handler);
 		handler.start();
 
-		sendMsg(_("We are in need of a captain! Vote with the /sporz elect command"));
+		sendMsg(gold(_("We are in need of a captain! Vote with the /sporz elect command")));
 	}
 	public void ask(Game game, MutantsActions action) {
 		MutantsActionsHandler handler = new MutantsActionsHandler(game, this, action);
 		handlers.put(action, handler);
 		handler.start();
 
-		sendMsg(_("Mutants, you may now mutate or kill, in addition to paralyse, players"));
+		sendMsg(gold(_("Mutants, you may now mutate or kill, in addition to paralyse, players")));
 		//TODO: tp
 	}
 	public void ask(Game game, DoctorsAction action) {
@@ -249,7 +250,7 @@ public class MCPlayer extends Player {
 		handlers.put(action, handler);
 		handler.start();
 
-		sendMsg(_("Doctors, you can now heal or kill players"));
+		sendMsg(gold(_("Doctors, you can now heal or kill players")));
 		//TODO: tp
 	}
 	public void ask(Game game, Psychoanalyse action) {
