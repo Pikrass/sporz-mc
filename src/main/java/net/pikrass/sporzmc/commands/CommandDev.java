@@ -130,6 +130,7 @@ public class CommandDev extends SporzSubcommand
 
 	@Override
 	public boolean canCommandSenderUse(ICommandSender sender) {
-		return isOp(sender.getName());
+		// Allow ops and console
+		return isOp(sender.getName()) || sender.canUseCommand(100, "sporz dev");
 	}
 }
