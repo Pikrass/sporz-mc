@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-04 22:25+0200\n"
+"POT-Creation-Date: 2015-09-04 22:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -153,84 +153,104 @@ msgstr ""
 msgid "Doctors killed %s"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:198
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:161
+msgid "You try to heal %s"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:166
+msgid "You've been healed. You are now a human."
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:169
+msgid "An attempt was made to heal you, but it failed!"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:172
+msgid "You've been healed. It was useless."
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:208
 msgid "astronaut"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:199
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:209
 msgid "doctor"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:200
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:210
 msgid "psychologist"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:201
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:211
 msgid "geneticist"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:202
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:212
 msgid "computer engineer"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:203
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:213
 msgid "hacker"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:204
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:214
 msgid "spy"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:205
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:215
 msgid "traitor"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:209
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:219
 msgid "resistant"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:210
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:220
 msgid "standard"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:211
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:221
 msgid "host"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:215
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:225
 msgid "human"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:217
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:227
 msgid "mutant"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:219
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:229
 msgid "%s was %s, %s, %s"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:227
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:237
 msgid "We are in need of a captain! Vote with the /sporz elect command"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:234
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:244
 msgid "Mutants, you may now mutate or kill, in addition to paralyse, players"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:57
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:252
+msgid "Doctors, you can now heal or kill players"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:59
 msgid "/sporz <command|help>"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:62
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:70
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:64
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:72
 msgid "help"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:78
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:80
 msgid "Unknown command. Try /sporz help for a list of commands"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:114
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:116
 msgid "Available sporz commands:"
 msgstr ""
 
@@ -245,6 +265,7 @@ msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandKill.java:39
 #: src/main/java/net/pikrass/sporzmc/commands/CommandElect.java:40
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHeal.java:39
 #: src/main/java/net/pikrass/sporzmc/commands/CommandParalyse.java:39
 #: src/main/java/net/pikrass/sporzmc/commands/CommandMutate.java:39
 msgid "This player doesn't exist"
@@ -252,6 +273,7 @@ msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandKill.java:43
 #: src/main/java/net/pikrass/sporzmc/commands/CommandElect.java:45
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHeal.java:43
 #: src/main/java/net/pikrass/sporzmc/commands/CommandParalyse.java:43
 #: src/main/java/net/pikrass/sporzmc/commands/CommandMutate.java:43
 #: src/main/java/net/pikrass/sporzmc/commands/CommandDone.java:29
@@ -265,6 +287,15 @@ msgstr ""
 #: src/main/java/net/pikrass/sporzmc/commands/CommandElect.java:22
 #: src/main/java/net/pikrass/sporzmc/commands/CommandElect.java:27
 msgid "elect <player>"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHeal.java:16
+msgid "heal"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHeal.java:21
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHeal.java:26
+msgid "heal <player>"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandParalyse.java:16

@@ -25,6 +25,7 @@ public class CommandSporz extends CommandBase
 	private CommandKill commandKill;
 	private CommandMutate commandMutate;
 	private CommandParalyse commandParalyse;
+	private CommandHeal commandHeal;
 	private CommandDone commandDone;
 
 	public CommandSporz() {
@@ -38,6 +39,7 @@ public class CommandSporz extends CommandBase
 		cmds.add(this.commandKill = new CommandKill());
 		cmds.add(this.commandMutate = new CommandMutate());
 		cmds.add(this.commandParalyse = new CommandParalyse());
+		cmds.add(this.commandHeal = new CommandHeal());
 		cmds.add(this.commandDone = new CommandDone());
 
 		if(SporzMC.devMode())
@@ -142,6 +144,10 @@ public class CommandSporz extends CommandBase
 
 	public CommandParalyse getCommandParalyse() {
 		return commandParalyse;
+	}
+
+	public CommandHeal getCommandHeal() {
+		return commandHeal;
 	}
 
 	public CommandDone getCommandDone() {

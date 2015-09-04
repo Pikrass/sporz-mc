@@ -158,10 +158,20 @@ public class MCPlayer extends Player {
 		revealPlayer(event.getTarget());
 	}
 	public void notifyOrigin(Healing.NoResult event) {
-		//TODO
+		sendMsg(blue(String.format(_("You try to heal %s"), event.getTarget())));
 	}
 	public void notifyTarget(Healing event) {
-		//TODO
+		switch(event.getResult()) {
+			case SUCCESS:
+				sendMsg(red(_("You've been healed. You are now a human.")));
+				break;
+			case FAIL:
+				sendMsg(blue(_("An attempt was made to heal you, but it failed!")));
+				break;
+			case USELESS:
+				sendMsg(blue(_("You've been healed. It was useless.")));
+				break;
+		}
 	}
 	public void notify(Psychoanalysis event) {
 		//TODO
@@ -235,7 +245,12 @@ public class MCPlayer extends Player {
 		//TODO: tp
 	}
 	public void ask(Game game, DoctorsAction action) {
-		//TODO
+		DoctorsActionHandler handler = new DoctorsActionHandler(game, this, action);
+		handlers.put(action, handler);
+		handler.start();
+
+		sendMsg(_("Doctors, you can now heal or kill players"));
+		//TODO: tp
 	}
 	public void ask(Game game, Psychoanalyse action) {
 		//TODO
