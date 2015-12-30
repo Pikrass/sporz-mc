@@ -175,7 +175,19 @@ public class MCPlayer extends Player {
 		}
 	}
 	public void notify(Psychoanalysis event) {
-		//TODO
+		if(!event.hasResult()) {
+			sendMsg(blue(_("You didn't psychoanalyse anybody")));
+			return;
+		}
+
+		switch(event.getResult()) {
+			case HUMAN:
+				sendMsg(blue(String.format(_("%s is human"), event.getTarget())));
+				break;
+			case MUTANT:
+				sendMsg(blue(String.format(_("%s is mutant"), event.getTarget())));
+				break;
+		}
 	}
 	public void notify(Sequencing event) {
 		//TODO
@@ -254,7 +266,11 @@ public class MCPlayer extends Player {
 		//TODO: tp
 	}
 	public void ask(Game game, Psychoanalyse action) {
-		//TODO
+		PsychoanalyseHandler handler = new PsychoanalyseHandler(game, this, action);
+		handlers.put(action, handler);
+		handler.start();
+
+		sendMsg(gold(_("Choose someone to psychoanalyse")));
 	}
 	public void ask(Game game, Sequence action) {
 		//TODO
