@@ -208,7 +208,14 @@ public class MCPlayer extends Player {
 		}
 	}
 	public void notify(MutantCount event) {
-		//TODO
+		if(!event.hasResult()) {
+			sendMsg(blue(_("You didn't count the mutants")));
+			return;
+		}
+
+		sendMsg(blue(String.format(
+						_("There is %d mutant", "There are %d mutants", event.getResult()),
+						event.getResult())));
 	}
 	public void notify(Psychoanalysis.Hacked event) {
 		//TODO
@@ -295,7 +302,11 @@ public class MCPlayer extends Player {
 		sendMsg(gold(_("Choose someone whose genome to sequence")));
 	}
 	public void ask(Game game, Count action) {
-		//TODO
+		CountHandler handler = new CountHandler(game, this, action);
+		handlers.put(action, handler);
+		handler.start();
+
+		sendMsg(gold(_("Choose whether you want to count the mutants")));
 	}
 	public void ask(Game game, Hack action) {
 		//TODO

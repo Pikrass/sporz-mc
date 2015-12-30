@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-31 01:23+0900\n"
+"POT-Creation-Date: 2015-12-31 01:24+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,6 +42,7 @@ msgstr ""
 #: src/main/java/net/pikrass/sporzmc/commands/CommandParalyse.java:43
 #: src/main/java/net/pikrass/sporzmc/commands/CommandPsy.java:47
 #: src/main/java/net/pikrass/sporzmc/commands/CommandGenet.java:47
+#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:46
 msgid "Your choice has been saved"
 msgstr ""
 
@@ -378,20 +379,41 @@ msgstr ""
 msgid "genet <player>|none"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:63
+#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:16
+msgid "count"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:21
+#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:26
+msgid "count yes|no"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:37
+msgid "yes"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:39
+msgid "no"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:42
+msgid "Please choose between yes or no"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:65
 msgid "/sporz <command|help>"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:68
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:76
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:70
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:78
 msgid "help"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:84
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:86
 msgid "Unknown command. Try /sporz help for a list of commands"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:120
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:122
 msgid "Available sporz commands:"
 msgstr ""
 
@@ -574,78 +596,92 @@ msgstr ""
 msgid "%s is host"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:236
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:212
+msgid "You didn't count the mutants"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:217
+msgid "There is %d mutant"
+msgid_plural "There are %d mutants"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:243
 msgid "astronaut"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:237
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:244
 msgid "doctor"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:238
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:245
 msgid "psychologist"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:239
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:246
 msgid "geneticist"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:240
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:247
 msgid "computer engineer"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:241
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:248
 msgid "hacker"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:242
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:249
 msgid "spy"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:243
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:250
 msgid "traitor"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:247
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:254
 msgid "resistant"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:248
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:255
 msgid "standard"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:249
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:256
 msgid "host"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:253
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:260
 msgid "human"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:255
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:262
 msgid "mutant"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:257
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:264
 msgid "%s was %s, %s, %s"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:265
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:272
 msgid "We are in need of a captain! Vote with the /sporz elect command"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:272
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:279
 msgid "Mutants, you may now mutate or kill, in addition to paralyse, players"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:280
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:287
 msgid "Doctors, you can now heal or kill players"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:288
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:295
 msgid "Choose someone to psychoanalyse"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:295
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:302
 msgid "Choose someone whose genome to sequence"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:309
+msgid "Choose whether you want to count the mutants"
 msgstr ""
