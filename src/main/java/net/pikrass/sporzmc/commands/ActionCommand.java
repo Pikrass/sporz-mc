@@ -24,10 +24,32 @@ public abstract class ActionCommand<Handler> extends SporzSubcommand {
 		handlers.remove(player);
 	}
 
+	private Handler getHandler(ICommandSender sender) {
+		MCPlayer player = SporzMC.getPlayers().get(sender.getName());
+		return handlers.get(player);
+	}
+
+	@Override
+	public String getCommandShortUsage(ICommandSender sender) {
+		return getCommandShortUsage(sender, getHandler(sender));
+	}
+
+	public String getCommandShortUsage(ICommandSender sender, Handler handler) {
+		return "";
+	}
+
+	@Override
+	public String getCommandUsage(ICommandSender sender) {
+		return getCommandUsage(sender, getHandler(sender));
+	}
+
+	public String getCommandUsage(ICommandSender sender, Handler handler) {
+		return "";
+	}
+
 	@Override
 	public void execute(ICommandSender sender, String[] params) throws CommandException {
-		MCPlayer player = SporzMC.getPlayers().get(sender.getName());
-		execute(sender, handlers.get(player), params);
+		execute(sender, getHandler(sender), params);
 	}
 
 	protected abstract void execute(ICommandSender sender, Handler handler, String[] params);

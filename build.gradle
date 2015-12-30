@@ -28,7 +28,7 @@ minecraft {
 
 task buildPot << {
 	exec {
-		commandLine 'bash', '-c', "xgettext -L java --from-code utf-8 -k_ -k_:1,2 -o po/sporzmc.pot \$(find src/main/java/net/pikrass/sporzmc -name '*.java')"
+		commandLine 'bash', '-c', "xgettext -L java --from-code utf-8 -k_ -k_:1c,2,2t -k_:1,2,3t -o po/sporzmc.pot \$(find src/main/java/net/pikrass/sporzmc -name '*.java')"
 	}
 }
 

@@ -218,13 +218,48 @@ public class MCPlayer extends Player {
 						event.getResult())));
 	}
 	public void notify(Psychoanalysis.Hacked event) {
-		//TODO
+		if(!event.hasResult()) {
+			sendMsg(blue(_("The psychologist had no information tonight")));
+			return;
+		}
+
+		switch(event.getResult()) {
+			case HUMAN:
+				sendMsg(blue(String.format(_("The psychologist concluded that %s is human"), event.getTarget())));
+				break;
+			case MUTANT:
+				sendMsg(blue(String.format(_("The psychologist concluded that %s is mutant"), event.getTarget())));
+				break;
+		}
 	}
 	public void notify(Sequencing.Hacked event) {
-		//TODO
+		if(!event.hasResult()) {
+			sendMsg(blue(_("The geneticist had no information tonight")));
+			return;
+		}
+
+		switch(event.getResult()) {
+			case STANDARD:
+				sendMsg(blue(String.format(_("The geneticist concluded that %s is standard"), event.getTarget())));
+				break;
+			case RESISTANT:
+				sendMsg(blue(String.format(_("The geneticist concluded that %s is resistant"), event.getTarget())));
+				break;
+			case HOST:
+				sendMsg(blue(String.format(_("The geneticist concluded that %s is host"), event.getTarget())));
+				break;
+		}
 	}
 	public void notify(MutantCount.Hacked event) {
-		//TODO
+		if(!event.hasResult()) {
+			sendMsg(blue(_("The computer engineer had no information tonight")));
+			return;
+		}
+
+		sendMsg(blue(String.format(_("The computer engineer counted %d mutant",
+							"The computer engineer counted %d mutants",
+							event.getResult()),
+						event.getResult())));
 	}
 	public void notify(SpyReport event) {
 		//TODO
@@ -309,7 +344,11 @@ public class MCPlayer extends Player {
 		sendMsg(gold(_("Choose whether you want to count the mutants")));
 	}
 	public void ask(Game game, Hack action) {
-		//TODO
+		HackHandler handler = new HackHandler(game, this, action);
+		handlers.put(action, handler);
+		handler.start();
+
+		sendMsg(gold(_("Choose a role to hack")));
 	}
 	public void ask(Game game, Spy action) {
 		//TODO
