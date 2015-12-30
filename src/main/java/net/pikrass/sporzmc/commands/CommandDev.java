@@ -43,8 +43,8 @@ public class CommandDev extends SporzSubcommand
 
 	@Override
 	public void execute(ICommandSender sender, String[] params) {
-		if(params.length == 2 && params[0].equals("pigs")) {
-			if(params[1].equals("reset")) {
+		if(params.length == 2 && params[0].equals(_("pigs"))) {
+			if(params[1].equals(_("reset"))) {
 				resetPigs();
 			} else {
 				try {
