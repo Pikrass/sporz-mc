@@ -21,6 +21,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 
 import java.util.Map;
 import java.util.HashMap;
+import java.util.SortedSet;
 import java.util.Iterator;
 
 public class MCPlayer extends Player {
@@ -262,7 +263,41 @@ public class MCPlayer extends Player {
 						event.getResult())));
 	}
 	public void notify(SpyReport event) {
-		//TODO
+		SortedSet<SpyReport.Line> lines = event.getResult();
+		if(lines.isEmpty()) {
+			sendMsg(blue(String.format(_("Nothing happened to %s tonight"), event.getTarget())));
+			return;
+		}
+
+		StringBuffer msg = new StringBuffer(String.format(_("Tonight, %s was"), event.getTarget()));
+		msg.append(" ");
+
+		for(SpyReport.Line line : lines) {
+			int id;
+			switch(line.getType()) {
+				case MUTATION:
+					msg.append(_("mutated"));
+					break;
+				case PARALYSIS:
+					msg.append(_("paralysed"));
+					break;
+				case HEALING:
+					msg.append(_("healed"));
+					break;
+				case PSYCHOANALYSIS:
+					id = Integer.parseInt(line.getName().substring(1));
+					msg.append(String.format(_("psychoanalysed by psy n°%d"), id));
+					break;
+				case SEQUENCING:
+					id = Integer.parseInt(line.getName().substring(1));
+					msg.append(String.format(_("sequenced by genet n°%d"), id));
+					break;
+			}
+			msg.append(", ");
+		}
+
+		msg.delete(msg.length()-2, msg.length());
+		sendMsg(blue(msg.toString()));
 	}
 	public void notify(Lynching.Anonymous event) {
 		//TODO
@@ -351,7 +386,11 @@ public class MCPlayer extends Player {
 		sendMsg(gold(_("Choose a role to hack")));
 	}
 	public void ask(Game game, Spy action) {
-		//TODO
+		SpyHandler handler = new SpyHandler(game, this, action);
+		handlers.put(action, handler);
+		handler.start();
+
+		sendMsg(gold(_("Choose a player to spy on")));
 	}
 	public void ask(Game game, Lynch action) {
 		//TODO
