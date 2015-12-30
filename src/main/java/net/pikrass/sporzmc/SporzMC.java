@@ -8,6 +8,8 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.config.Configuration;
 
+import net.minecraft.util.AxisAlignedBB;
+
 import net.pikrass.sporzmc.commands.CommandSporz;
 
 import net.pikrass.sporz.Game;
@@ -95,7 +97,32 @@ public class SporzMC
 		return instance.rules;
 	}
 
+
+	public static AxisAlignedBB getHub() {
+		double[] defaults = {-10.0, 63.0, -10.0, 10.0, 63.0, 10.0};
+		return getConfigZone("hub", defaults);
+	}
+
+	public static AxisAlignedBB getDoctorsRoom() {
+		double[] defaults = {-60.0, 63.0, -10.0, -40.0, 63.0, 10.0};
+		return getConfigZone("doctors", defaults);
+	}
+
+	public static AxisAlignedBB getMutantsRoom() {
+		double[] defaults = {40.0, 63.0, -10.0, 60.0, 63.0, 10.0};
+		return getConfigZone("mutants", defaults);
+	}
+
+
 	public static boolean devMode() {
 		return instance.config.get(Configuration.CATEGORY_GENERAL, "dev", false).getBoolean(false);
+	}
+
+
+	private static AxisAlignedBB getConfigZone(String name, double[] defaults) {
+		double[] zone = instance.config.get("places", name, defaults).getDoubleList();
+		if(zone.length != 6)
+			zone = defaults;
+		return new AxisAlignedBB(zone[0], zone[1], zone[2], zone[3], zone[4], zone[5]);
 	}
 }

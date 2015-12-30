@@ -18,6 +18,8 @@ import net.minecraft.server.management.ServerConfigurationManager;
 import net.minecraft.world.WorldSettings;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.Vec3;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -46,6 +48,21 @@ public class MCPlayer extends Player {
 		entity.onKillCommand();
 		if(entity instanceof EntityPlayerMP)
 			((EntityPlayerMP)entity).setGameType(WorldSettings.GameType.SPECTATOR);
+	}
+
+	private void teleportZone(AxisAlignedBB zone) {
+		Vec3 pos = new Vec3(
+				zone.minX + (zone.maxX - zone.minX) * Math.random(),
+				zone.minY + (zone.maxY - zone.minY) * Math.random(),
+				zone.minZ + (zone.maxZ - zone.minZ) * Math.random()
+				);
+		teleport(pos);
+	}
+
+	private void teleport(Vec3 pos) {
+		Entity entity = getEntity();
+		entity.setLocationAndAngles(pos.xCoord, pos.yCoord, pos.zCoord,
+				entity.rotationYaw, entity.rotationPitch);
 	}
 
 
@@ -347,7 +364,7 @@ public class MCPlayer extends Player {
 		handler.start();
 
 		sendMsg(gold(_("Mutants, you may now mutate or kill, in addition to paralyse, players")));
-		//TODO: tp
+		teleportZone(SporzMC.getMutantsRoom());
 	}
 	public void ask(Game game, DoctorsAction action) {
 		DoctorsActionHandler handler = new DoctorsActionHandler(game, this, action);
@@ -355,7 +372,7 @@ public class MCPlayer extends Player {
 		handler.start();
 
 		sendMsg(gold(_("Doctors, you can now heal or kill players")));
-		//TODO: tp
+		teleportZone(SporzMC.getDoctorsRoom());
 	}
 	public void ask(Game game, Psychoanalyse action) {
 		PsychoanalyseHandler handler = new PsychoanalyseHandler(game, this, action);
