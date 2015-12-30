@@ -190,7 +190,22 @@ public class MCPlayer extends Player {
 		}
 	}
 	public void notify(Sequencing event) {
-		//TODO
+		if(!event.hasResult()) {
+			sendMsg(blue(_("You didn't sequence anybody's genome")));
+			return;
+		}
+
+		switch(event.getResult()) {
+			case STANDARD:
+				sendMsg(blue(String.format(_("%s is standard"), event.getTarget())));
+				break;
+			case RESISTANT:
+				sendMsg(blue(String.format(_("%s is resistant"), event.getTarget())));
+				break;
+			case HOST:
+				sendMsg(blue(String.format(_("%s is host"), event.getTarget())));
+				break;
+		}
 	}
 	public void notify(MutantCount event) {
 		//TODO
@@ -273,7 +288,11 @@ public class MCPlayer extends Player {
 		sendMsg(gold(_("Choose someone to psychoanalyse")));
 	}
 	public void ask(Game game, Sequence action) {
-		//TODO
+		SequenceHandler handler = new SequenceHandler(game, this, action);
+		handlers.put(action, handler);
+		handler.start();
+
+		sendMsg(gold(_("Choose someone whose genome to sequence")));
 	}
 	public void ask(Game game, Count action) {
 		//TODO
