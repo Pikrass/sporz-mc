@@ -30,7 +30,7 @@ public class CommandDev extends SporzSubcommand
 
 	@Override
 	public String getCommandShortUsage(ICommandSender sender) {
-		return _("dev [ pigs reset|<num> ] | [ <player> <cmd> ]");
+		return _("dev [ pigs reset|<num> ] | [ seed <num> ] | [ <player> <cmd> ]");
 	}
 
 	@Override
@@ -38,6 +38,7 @@ public class CommandDev extends SporzSubcommand
 		return
 			_("dev pigs reset")+"\n"+
 			_("dev pigs <num>")+"\n"+
+			_("dev seed <num>")+"\n"+
 			_("dev <player> <cmd> <args>...");
 	}
 
@@ -53,6 +54,8 @@ public class CommandDev extends SporzSubcommand
 					printShortUsage(sender);
 				}
 			}
+		} else if(params.length == 2 && params[0].equals(_("seed"))) {
+			seedRNG(Long.parseLong(params[1]));
 		} else if(params.length >= 2) {
 			MCPlayer player = SporzMC.getPlayers().get(params[0]);
 			if(player == null)
@@ -98,6 +101,10 @@ public class CommandDev extends SporzSubcommand
 		}
 	}
 
+	private void seedRNG(long seed) {
+		SporzMC.getRules().seedRNG(seed);
+	}
+
 	private void sendCommandAs(MCPlayer player, String[] args) {
 		try {
 			SporzMC.getCommand().execute(player.getCommandSender(), args);
@@ -111,6 +118,8 @@ public class CommandDev extends SporzSubcommand
 		if(args.length == 1) {
 			if(_("pigs").startsWith(args[0]))
 				list.add(_("pigs"));
+			if(_("seed").startsWith(args[0]))
+				list.add(_("seed"));
 			for(String name : SporzMC.getPlayers().keySet()) {
 				if(name.startsWith(args[0]))
 					list.add(name);
