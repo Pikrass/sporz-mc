@@ -22,8 +22,8 @@ implements CmdClearHandler, CmdCountHandler {
 	}
 
 	public void stop() {
-		SporzMC.getCommand().getCommandClear().unregister(player);
-		SporzMC.getCommand().getCommandCount().unregister(player);
+		SporzMC.getCommand().getCommandClear().unregister(player, this);
+		SporzMC.getCommand().getCommandCount().unregister(player, this);
 	}
 
 	public void count(boolean choice) {

@@ -22,8 +22,8 @@ implements CmdClearHandler, CmdPsyHandler {
 	}
 
 	public void stop() {
-		SporzMC.getCommand().getCommandClear().unregister(player);
-		SporzMC.getCommand().getCommandPsy().unregister(player);
+		SporzMC.getCommand().getCommandClear().unregister(player, this);
+		SporzMC.getCommand().getCommandPsy().unregister(player, this);
 	}
 
 	public void psy(Player p) {

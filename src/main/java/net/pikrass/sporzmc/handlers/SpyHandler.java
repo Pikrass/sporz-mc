@@ -22,8 +22,8 @@ implements CmdClearHandler, CmdSpyHandler {
 	}
 
 	public void stop() {
-		SporzMC.getCommand().getCommandClear().unregister(player);
-		SporzMC.getCommand().getCommandSpy().unregister(player);
+		SporzMC.getCommand().getCommandClear().unregister(player, this);
+		SporzMC.getCommand().getCommandSpy().unregister(player, this);
 	}
 
 	public void spy(Player p) {

@@ -29,11 +29,11 @@ implements CmdClearHandler, CmdKillHandler, CmdMutateHandler,
 	}
 
 	public void stop() {
-		SporzMC.getCommand().getCommandClear().unregister(player);
-		SporzMC.getCommand().getCommandKill().unregister(player);
-		SporzMC.getCommand().getCommandMutate().unregister(player);
-		SporzMC.getCommand().getCommandParalyse().unregister(player);
-		SporzMC.getCommand().getCommandDone().unregister(player);
+		SporzMC.getCommand().getCommandClear().unregister(player, this);
+		SporzMC.getCommand().getCommandKill().unregister(player, this);
+		SporzMC.getCommand().getCommandMutate().unregister(player, this);
+		SporzMC.getCommand().getCommandParalyse().unregister(player, this);
+		SporzMC.getCommand().getCommandDone().unregister(player, this);
 	}
 
 	public void kill(Player p) {

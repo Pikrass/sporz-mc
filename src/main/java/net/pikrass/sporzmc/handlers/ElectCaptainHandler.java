@@ -24,9 +24,9 @@ implements CmdClearHandler, CmdElectHandler, CmdDoneHandler {
 	}
 
 	public void stop() {
-		SporzMC.getCommand().getCommandClear().unregister(player);
-		SporzMC.getCommand().getCommandElect().unregister(player);
-		SporzMC.getCommand().getCommandDone().unregister(player);
+		SporzMC.getCommand().getCommandClear().unregister(player, this);
+		SporzMC.getCommand().getCommandElect().unregister(player, this);
+		SporzMC.getCommand().getCommandDone().unregister(player, this);
 	}
 
 	public void elect(Player p) throws BlankVoteProhibitedException {

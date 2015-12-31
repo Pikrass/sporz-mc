@@ -25,8 +25,12 @@ public class CommandDone extends ActionCommand<CmdDoneHandler> {
 	}
 
 	@Override
-	protected void execute(ICommandSender sender, CmdDoneHandler handler, String[] params) {
+	protected void preexecute(ICommandSender sender, String[] params) {
 		sendMsg(sender, green(_("Your choice has been saved")));
+	}
+
+	@Override
+	protected void execute(ICommandSender sender, CmdDoneHandler handler, String[] params) {
 		handler.done();
 	}
 }

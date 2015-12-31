@@ -22,8 +22,8 @@ implements CmdClearHandler, CmdGenetHandler {
 	}
 
 	public void stop() {
-		SporzMC.getCommand().getCommandClear().unregister(player);
-		SporzMC.getCommand().getCommandGenet().unregister(player);
+		SporzMC.getCommand().getCommandClear().unregister(player, this);
+		SporzMC.getCommand().getCommandGenet().unregister(player, this);
 	}
 
 	public void genet(Player p) {

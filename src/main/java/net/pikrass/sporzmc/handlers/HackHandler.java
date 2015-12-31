@@ -25,8 +25,8 @@ implements CmdClearHandler, CmdHackHandler {
 	}
 
 	public void stop() {
-		SporzMC.getCommand().getCommandClear().unregister(player);
-		SporzMC.getCommand().getCommandHack().unregister(player);
+		SporzMC.getCommand().getCommandClear().unregister(player, this);
+		SporzMC.getCommand().getCommandHack().unregister(player, this);
 	}
 
 	public void hack(String choice) throws InvalidChoiceException {

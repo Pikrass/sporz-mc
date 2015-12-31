@@ -26,10 +26,10 @@ implements CmdClearHandler, CmdHealHandler, CmdKillHandler, CmdDoneHandler {
 	}
 
 	public void stop() {
-		SporzMC.getCommand().getCommandClear().unregister(player);
-		SporzMC.getCommand().getCommandHeal().unregister(player);
-		SporzMC.getCommand().getCommandKill().unregister(player);
-		SporzMC.getCommand().getCommandDone().unregister(player);
+		SporzMC.getCommand().getCommandClear().unregister(player, this);
+		SporzMC.getCommand().getCommandHeal().unregister(player, this);
+		SporzMC.getCommand().getCommandKill().unregister(player, this);
+		SporzMC.getCommand().getCommandDone().unregister(player, this);
 	}
 
 	public void kill(Player p) {

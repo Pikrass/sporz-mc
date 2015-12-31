@@ -25,8 +25,12 @@ public class CommandClear extends ActionCommand<CmdClearHandler> {
 	}
 
 	@Override
-	protected void execute(ICommandSender sender, CmdClearHandler handler, String[] params) {
+	protected void preexecute(ICommandSender sender, String[] params) {
 		sendMsg(sender, green(_("Your choice has been cleared")));
+	}
+
+	@Override
+	protected void execute(ICommandSender sender, CmdClearHandler handler, String[] params) {
 		handler.clear();
 	}
 }
