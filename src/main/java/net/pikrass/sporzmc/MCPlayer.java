@@ -28,10 +28,16 @@ import java.util.Iterator;
 
 public class MCPlayer extends Player {
 	private Map<Action, ActionHandler> handlers;
+	private Vec3 room;
 
 	public MCPlayer(String username) {
 		super(username);
 		this.handlers = new HashMap<Action, ActionHandler>();
+		this.room = null;
+	}
+
+	public void assignRoom(Vec3 room) {
+		this.room = room;
 	}
 
 	protected Entity getEntity() {

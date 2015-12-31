@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.config.Configuration;
 
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.Vec3;
 
 import net.pikrass.sporzmc.commands.CommandSporz;
 
@@ -17,6 +18,8 @@ import net.pikrass.sporz.CustomRules;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 @Mod(
 	modid   = SporzMC.MODID,
@@ -111,6 +114,18 @@ public class SporzMC
 	public static AxisAlignedBB getMutantsRoom() {
 		double[] defaults = {40.0, 63.0, -10.0, 60.0, 63.0, 10.0};
 		return getConfigZone("mutants", defaults);
+	}
+
+	public static List<Vec3> getIndividualRooms() {
+		double[] defaults = {};
+		double[] coords = instance.config.get("places", "rooms", defaults).getDoubleList();
+		ArrayList<Vec3> rooms = new ArrayList<Vec3>();
+
+		for(int i=0 ; i < coords.length-2 ; i+=3) {
+			rooms.add(new Vec3(coords[i], coords[i+1], coords[i+2]));
+		}
+
+		return rooms;
 	}
 
 
