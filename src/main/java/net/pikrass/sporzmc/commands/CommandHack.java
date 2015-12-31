@@ -10,10 +10,13 @@ import net.pikrass.sporz.actions.InvalidChoiceException;
 import net.pikrass.sporz.Player;
 
 import net.minecraft.command.ICommandSender;
+import net.minecraft.util.BlockPos;
 
+import java.util.List;
 import java.util.Set;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.LinkedList;
 
 public class CommandHack extends ActionCommand<CmdHackHandler> {
 	@Override
@@ -55,6 +58,21 @@ public class CommandHack extends ActionCommand<CmdHackHandler> {
 			handler.hack(role);
 		} catch(InvalidChoiceException e) {
 		}
+	}
+
+
+	@Override
+	public List addTabCompletionOptions(ICommandSender sender, String[] args, BlockPos pos, CmdHackHandler handler) {
+		List<String> list = new LinkedList<String>();
+		if(args.length == 1) {
+			if(_("none").startsWith(args[0]))
+				list.add(_("none"));
+			for(String role : makeChoices(handler).keySet()) {
+				if(role.startsWith(args[0]))
+					list.add(role);
+			}
+		}
+		return list;
 	}
 
 

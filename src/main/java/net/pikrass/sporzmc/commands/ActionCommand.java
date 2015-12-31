@@ -2,9 +2,11 @@ package net.pikrass.sporzmc.commands;
 
 import net.minecraft.command.ICommandSender;
 import net.minecraft.command.CommandException;
+import net.minecraft.util.BlockPos;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
 
 import net.pikrass.sporzmc.*;
 
@@ -53,6 +55,15 @@ public abstract class ActionCommand<Handler> extends SporzSubcommand {
 	}
 
 	protected abstract void execute(ICommandSender sender, Handler handler, String[] params);
+
+	@Override
+	public List addTabCompletionOptions(ICommandSender sender, String[] args, BlockPos pos) {
+		return addTabCompletionOptions(sender, args, pos, getHandler(sender));
+	}
+
+	public List addTabCompletionOptions(ICommandSender sender, String[] args, BlockPos pos, Handler handler) {
+		return null;
+	}
 
 	@Override
 	public boolean canCommandSenderUse(ICommandSender sender) {

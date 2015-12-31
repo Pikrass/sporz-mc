@@ -48,7 +48,7 @@ msgstr ""
 #: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:46
 #: src/main/java/net/pikrass/sporzmc/commands/CommandSpy.java:47
 #: src/main/java/net/pikrass/sporzmc/commands/CommandDone.java:29
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:53
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:56
 msgid "Your choice has been saved"
 msgstr ""
 
@@ -345,8 +345,10 @@ msgstr ""
 #: src/main/java/net/pikrass/sporzmc/commands/CommandPsy.java:37
 #: src/main/java/net/pikrass/sporzmc/commands/CommandGenet.java:37
 #: src/main/java/net/pikrass/sporzmc/commands/CommandSpy.java:37
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:42
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:99
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:45
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:68
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:69
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:117
 msgid "none"
 msgstr ""
 
@@ -406,27 +408,6 @@ msgstr ""
 msgid "done"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:21
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:26
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:31
-msgid "hack"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:79
-msgctxt "hack choice"
-msgid "psy"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:80
-msgctxt "hack choice"
-msgid "genet"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:81
-msgctxt "hack choice"
-msgid "eng"
-msgstr ""
-
 #: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:69
 msgid "/sporz <command|help>"
 msgstr ""
@@ -452,6 +433,27 @@ msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:41
 msgid "There aren't enough players for the configured rules"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:24
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:29
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:34
+msgid "hack"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:97
+msgctxt "hack choice"
+msgid "psy"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:98
+msgctxt "hack choice"
+msgid "genet"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:99
+msgctxt "hack choice"
+msgid "eng"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/MCPlayer.java:83
