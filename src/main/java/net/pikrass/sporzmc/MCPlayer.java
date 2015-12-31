@@ -165,7 +165,7 @@ public class MCPlayer extends Player {
 		}
 	}
 	public void notify(NewCaptain event) {
-		sendMsg(blue(_("Votes are closed. Results follow:")));
+		sendMsg(blue(_("The election is closed. Results follow:")));
 		Iterator<Map.Entry<Player, Player>> it = event.voteIterator();
 		while(it.hasNext()) {
 			Map.Entry<Player, Player> vote = it.next();
@@ -344,7 +344,30 @@ public class MCPlayer extends Player {
 		sendMsg(blue(msg.toString()));
 	}
 	public void notify(Lynching.Anonymous event) {
-		//TODO
+		sendMsg(blue(_("Votes are closed. Results follow:")));
+		Iterator<Map.Entry<Player, Integer>> it = event.countIterator();
+		while(it.hasNext()) {
+			Map.Entry<Player, Integer> vote = it.next();
+
+			if(vote.getKey().equals(Player.NOBODY)) {
+				sendMsg(String.format(_("%d astronaut voted blank",
+								"%d astronauts voted blank", vote.getValue()),
+							vote.getValue()));
+			} else {
+				sendMsg(String.format(_("%d astronaut voted for %s",
+								"%d astronauts voted for %s", vote.getValue()),
+							vote.getValue(), vote.getKey()));
+			}
+		}
+
+		if(event.isDraw()) {
+			sendMsg(blue(_("There is a draw. The captain must settle the vote.")));
+		} else if(event.getTarget().equals(Player.NOBODY)) {
+			sendMsg(blue(_("Nobody is to be killed today")));
+		} else {
+			sendMsg(blue(String.format(_("You decided to kill %s"), event.getTarget())));
+			revealPlayer(event.getTarget());
+		}
 	}
 	public void notify(LynchSettling event) {
 		//TODO
@@ -437,7 +460,11 @@ public class MCPlayer extends Player {
 		sendMsg(gold(_("Choose a player to spy on")));
 	}
 	public void ask(Game game, Lynch action) {
-		//TODO
+		LynchHandler handler = new LynchHandler(game, this, action);
+		handlers.put(action, handler);
+		handler.start();
+
+		sendMsg(gold(_("Talk with the other astronauts, and vote to kill (or not) someone!")));
 	}
 	public void ask(Game game, SettleLynch action) {
 		//TODO

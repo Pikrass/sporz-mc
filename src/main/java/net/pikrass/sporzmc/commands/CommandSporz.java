@@ -31,6 +31,7 @@ public class CommandSporz extends CommandBase
 	private CommandCount commandCount;
 	private CommandHack commandHack;
 	private CommandSpy commandSpy;
+	private CommandVote commandVote;
 	private CommandDone commandDone;
 
 	public CommandSporz() {
@@ -50,6 +51,7 @@ public class CommandSporz extends CommandBase
 		cmds.add(this.commandCount = new CommandCount());
 		cmds.add(this.commandHack = new CommandHack());
 		cmds.add(this.commandSpy = new CommandSpy());
+		cmds.add(this.commandVote = new CommandVote());
 		cmds.add(this.commandDone = new CommandDone());
 
 		if(SporzMC.devMode())
@@ -178,6 +180,10 @@ public class CommandSporz extends CommandBase
 
 	public CommandSpy getCommandSpy() {
 		return commandSpy;
+	}
+
+	public CommandVote getCommandVote() {
+		return commandVote;
 	}
 
 	public CommandDone getCommandDone() {
