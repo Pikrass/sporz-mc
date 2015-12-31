@@ -8,7 +8,7 @@ import net.pikrass.sporz.actions.InvalidChoiceException;
 import java.util.Set;
 
 public class HackHandler extends ActionHandler
-implements CmdClearHandler, CmdHackHandler, CmdDoneHandler {
+implements CmdClearHandler, CmdHackHandler {
 	private Game game;
 	private MCPlayer player;
 	private Hack action;
@@ -22,24 +22,15 @@ implements CmdClearHandler, CmdHackHandler, CmdDoneHandler {
 	public void start() {
 		SporzMC.getCommand().getCommandClear().register(player, this);
 		SporzMC.getCommand().getCommandHack().register(player, this);
-		SporzMC.getCommand().getCommandDone().register(player, this);
 	}
 
 	public void stop() {
 		SporzMC.getCommand().getCommandClear().unregister(player);
 		SporzMC.getCommand().getCommandHack().unregister(player);
-		SporzMC.getCommand().getCommandDone().unregister(player);
 	}
 
 	public void hack(String choice) throws InvalidChoiceException {
 		action.choose(player, action.new Do(choice));
-	}
-
-	public void done() {
-		try {
-			action.choose(player, action.new Do(null));
-		} catch(InvalidChoiceException e) {
-		}
 	}
 
 	public void clear() {

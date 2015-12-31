@@ -5,7 +5,7 @@ import net.pikrass.sporz.*;
 import net.pikrass.sporz.actions.Count;
 
 public class CountHandler extends ActionHandler
-implements CmdClearHandler, CmdCountHandler, CmdDoneHandler {
+implements CmdClearHandler, CmdCountHandler {
 	private Game game;
 	private MCPlayer player;
 	private Count action;
@@ -19,21 +19,15 @@ implements CmdClearHandler, CmdCountHandler, CmdDoneHandler {
 	public void start() {
 		SporzMC.getCommand().getCommandClear().register(player, this);
 		SporzMC.getCommand().getCommandCount().register(player, this);
-		SporzMC.getCommand().getCommandDone().register(player, this);
 	}
 
 	public void stop() {
 		SporzMC.getCommand().getCommandClear().unregister(player);
 		SporzMC.getCommand().getCommandCount().unregister(player);
-		SporzMC.getCommand().getCommandDone().unregister(player);
 	}
 
 	public void count(boolean choice) {
 		action.choose(player, action.new Do(choice));
-	}
-
-	public void done() {
-		action.choose(player, action.new Do(false));
 	}
 
 	public void clear() {
