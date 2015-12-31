@@ -56,6 +56,24 @@ public class MCPlayer extends Player {
 			((EntityPlayerMP)entity).setGameType(WorldSettings.GameType.SPECTATOR);
 	}
 
+	private void teleportRoom() {
+		if(this.room != null) {
+			teleport(room);
+		}
+	}
+
+	private void teleportHub() {
+		teleportZone(SporzMC.getHub());
+	}
+
+	private void teleportRoomOrHub() {
+		if(this.room != null) {
+			teleport(room);
+		} else {
+			teleportZone(SporzMC.getHub());
+		}
+	}
+
 	private void teleportZone(AxisAlignedBB zone) {
 		Vec3 pos = new Vec3(
 				zone.minX + (zone.maxX - zone.minX) * Math.random(),
@@ -85,10 +103,13 @@ public class MCPlayer extends Player {
 	}
 
 	public void notifyRound(int num, RoundPeriod period) {
-		if(period == RoundPeriod.DAY)
+		if(period == RoundPeriod.DAY) {
 			sendMsg(String.format(_("========= DAY %d ========="), num));
-		else
+			teleportHub();
+		} else {
 			sendMsg(String.format(_("======== NIGHT %d ========"), num));
+			teleportRoom();
+		}
 	}
 	public void notify(Attribution event) {
 		switch(event.getRole()) {
@@ -436,9 +457,11 @@ public class MCPlayer extends Player {
 	}
 	public void stopAsking(MutantsActions action) {
 		genericStopAsking(action);
+		teleportRoomOrHub();
 	}
 	public void stopAsking(DoctorsAction action) {
 		genericStopAsking(action);
+		teleportRoomOrHub();
 	}
 	public void stopAsking(Psychoanalyse action) {
 		genericStopAsking(action);
