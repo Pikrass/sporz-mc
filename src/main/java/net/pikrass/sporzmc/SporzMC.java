@@ -76,6 +76,7 @@ public class SporzMC
 		if(instance.game != null)
 			instance.game.end();
 		instance.game = new Game();
+		instance.game.setMaster(new MasterEventReceiver());
 		return instance.game;
 	}
 
