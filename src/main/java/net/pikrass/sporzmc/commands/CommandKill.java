@@ -10,37 +10,19 @@ import net.pikrass.sporz.Player;
 
 import net.minecraft.command.ICommandSender;
 
-public class CommandKill extends ActionCommand<CmdKillHandler> {
+public class CommandKill extends PlayerTargetCommand<CmdKillHandler> {
 	@Override
 	public String getName() {
 		return _("kill");
 	}
 
 	@Override
-	public String getCommandShortUsage(ICommandSender sender) {
-		return _("kill <player>");
-	}
-
-	@Override
-	public String getCommandUsage(ICommandSender sender) {
-		return _("kill <player>");
-	}
-
-	@Override
-	protected void execute(ICommandSender sender, CmdKillHandler handler, String[] params) {
-		if(params.length != 1) {
-			printShortUsage(sender);
-			return;
-		}
-
-		Player target = SporzMC.getGame().getPlayer(params[0]);;
-
-		if(target == null) {
-			sendMsg(sender, red(_("This player doesn't exist")));
-			return;
-		}
-
-		sendMsg(sender, green(_("Your choice has been saved")));
+	protected void handle(ICommandSender sender, CmdKillHandler handler, Player target) {
 		handler.kill(target);
+	}
+
+	@Override
+	protected boolean allowsNone() {
+		return false;
 	}
 }

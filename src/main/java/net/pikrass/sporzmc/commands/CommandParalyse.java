@@ -10,37 +10,19 @@ import net.pikrass.sporz.Player;
 
 import net.minecraft.command.ICommandSender;
 
-public class CommandParalyse extends ActionCommand<CmdParalyseHandler> {
+public class CommandParalyse extends PlayerTargetCommand<CmdParalyseHandler> {
 	@Override
 	public String getName() {
 		return _("paralyse");
 	}
 
 	@Override
-	public String getCommandShortUsage(ICommandSender sender) {
-		return _("paralyse <player>");
-	}
-
-	@Override
-	public String getCommandUsage(ICommandSender sender) {
-		return _("paralyse <player>");
-	}
-
-	@Override
-	protected void execute(ICommandSender sender, CmdParalyseHandler handler, String[] params) {
-		if(params.length != 1) {
-			printShortUsage(sender);
-			return;
-		}
-
-		Player target = SporzMC.getGame().getPlayer(params[0]);;
-
-		if(target == null) {
-			sendMsg(sender, red(_("This player doesn't exist")));
-			return;
-		}
-
-		sendMsg(sender, green(_("Your choice has been saved")));
+	protected void handle(ICommandSender sender, CmdParalyseHandler handler, Player target) {
 		handler.paralyse(target);
+	}
+
+	@Override
+	protected boolean allowsNone() {
+		return false;
 	}
 }

@@ -10,42 +10,19 @@ import net.pikrass.sporz.Player;
 
 import net.minecraft.command.ICommandSender;
 
-public class CommandSpy extends ActionCommand<CmdSpyHandler> {
+public class CommandSpy extends PlayerTargetCommand<CmdSpyHandler> {
 	@Override
 	public String getName() {
 		return _("spy");
 	}
 
 	@Override
-	public String getCommandShortUsage(ICommandSender sender) {
-		return _("spy <player|none>");
-	}
-
-	@Override
-	public String getCommandUsage(ICommandSender sender) {
-		return _("spy <player|none>");
-	}
-
-	@Override
-	protected void execute(ICommandSender sender, CmdSpyHandler handler, String[] params) {
-		if(params.length != 1) {
-			printShortUsage(sender);
-			return;
-		}
-
-		Player target;
-		if(params[0].equals(_("none")))
-			target = Player.NOBODY;
-		else
-			target = SporzMC.getGame().getPlayer(params[0]);;
-
-		if(target == null) {
-			sendMsg(sender, red(_("This player doesn't exist")));
-			return;
-		}
-
-		sendMsg(sender, green(_("Your choice has been saved")));
+	protected void handle(ICommandSender sender, CmdSpyHandler handler, Player target) {
 		handler.spy(target);
 	}
-}
 
+	@Override
+	protected boolean allowsNone() {
+		return true;
+	}
+}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-02 00:17+0900\n"
+"POT-Creation-Date: 2016-01-02 00:39+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,69 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandElect.java:17
-msgid "elect"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandElect.java:22
-#: src/main/java/net/pikrass/sporzmc/commands/CommandElect.java:27
-msgid "elect <player>"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandElect.java:40
-#: src/main/java/net/pikrass/sporzmc/commands/CommandKill.java:39
-#: src/main/java/net/pikrass/sporzmc/commands/CommandMutate.java:39
-#: src/main/java/net/pikrass/sporzmc/commands/CommandParalyse.java:39
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHeal.java:39
-#: src/main/java/net/pikrass/sporzmc/commands/CommandGenet.java:43
-#: src/main/java/net/pikrass/sporzmc/commands/CommandPsy.java:43
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSpy.java:43
-#: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:70
-msgid "This player doesn't exist"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandElect.java:45
-#: src/main/java/net/pikrass/sporzmc/commands/CommandKill.java:43
-#: src/main/java/net/pikrass/sporzmc/commands/CommandMutate.java:43
-#: src/main/java/net/pikrass/sporzmc/commands/CommandParalyse.java:43
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDone.java:29
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHeal.java:43
-#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:46
-#: src/main/java/net/pikrass/sporzmc/commands/CommandGenet.java:47
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:56
-#: src/main/java/net/pikrass/sporzmc/commands/CommandPsy.java:47
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSpy.java:47
-#: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:80
-msgid "Your choice has been saved"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandKill.java:16
-msgid "kill"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandKill.java:21
-#: src/main/java/net/pikrass/sporzmc/commands/CommandKill.java:26
-msgid "kill <player>"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandMutate.java:16
-msgid "mutate"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandMutate.java:21
-#: src/main/java/net/pikrass/sporzmc/commands/CommandMutate.java:26
-msgid "mutate <player>"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandParalyse.java:16
-msgid "paralyse"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandParalyse.java:21
-#: src/main/java/net/pikrass/sporzmc/commands/CommandParalyse.java:26
-msgid "paralyse <player>"
-msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/SporzSubcommand.java:22
 #: src/main/java/net/pikrass/sporzmc/commands/SporzSubcommand.java:33
@@ -106,13 +43,12 @@ msgstr ""
 msgid "done"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHeal.java:16
-msgid "heal"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHeal.java:21
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHeal.java:26
-msgid "heal <player>"
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDone.java:29
+#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:46
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:56
+#: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:80
+#: src/main/java/net/pikrass/sporzmc/commands/PlayerTargetCommand.java:44
+msgid "Your choice has been saved"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:71
@@ -206,31 +142,20 @@ msgstr ""
 msgid "seed"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandGenet.java:16
-msgid "genet"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandGenet.java:21
-#: src/main/java/net/pikrass/sporzmc/commands/CommandGenet.java:26
-msgid "genet <player|none>"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandGenet.java:37
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:45
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:68
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:69
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:117
-#: src/main/java/net/pikrass/sporzmc/commands/CommandPsy.java:37
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSpy.java:37
-#: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:49
-#: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:64
-msgid "none"
-msgstr ""
-
 #: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:24
 #: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:29
 #: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:34
 msgid "hack"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:45
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:68
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:69
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:117
+#: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:49
+#: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:64
+#: src/main/java/net/pikrass/sporzmc/commands/PlayerTargetCommand.java:34
+msgid "none"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:97
@@ -306,15 +231,6 @@ msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandPlayers.java:99
 msgid "Player %s removed"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandPsy.java:16
-msgid "psy"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandPsy.java:21
-#: src/main/java/net/pikrass/sporzmc/commands/CommandPsy.java:26
-msgid "psy <player|none>"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:20
@@ -450,16 +366,6 @@ msgstr ""
 msgid "Rules"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSpy.java:16
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:391
-msgid "spy"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSpy.java:21
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSpy.java:26
-msgid "spy <player|none>"
-msgstr ""
-
 #: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:19
 #: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:40
 msgid "vote"
@@ -469,8 +375,54 @@ msgstr ""
 msgid "vote <player|none>"
 msgstr ""
 
+#: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:70
+#: src/main/java/net/pikrass/sporzmc/commands/PlayerTargetCommand.java:40
+msgid "This player doesn't exist"
+msgstr ""
+
 #: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:76
 msgid "This choice is unavailable"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandElect.java:17
+msgid "elect"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/PlayerTargetCommand.java:16
+msgid "<player|none>"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/PlayerTargetCommand.java:18
+msgid "<player>"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandPsy.java:16
+msgid "psy"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSpy.java:16
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:391
+msgid "spy"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandGenet.java:16
+msgid "genet"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHeal.java:16
+msgid "heal"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandKill.java:16
+msgid "kill"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandParalyse.java:16
+msgid "paralyse"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandMutate.java:16
+msgid "mutate"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/MCPlayer.java:107
