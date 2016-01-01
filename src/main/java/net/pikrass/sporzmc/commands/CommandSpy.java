@@ -18,12 +18,12 @@ public class CommandSpy extends ActionCommand<CmdSpyHandler> {
 
 	@Override
 	public String getCommandShortUsage(ICommandSender sender) {
-		return _("spy <player>|none");
+		return _("spy <player|none>");
 	}
 
 	@Override
 	public String getCommandUsage(ICommandSender sender) {
-		return _("spy <player>|none");
+		return _("spy <player|none>");
 	}
 
 	@Override

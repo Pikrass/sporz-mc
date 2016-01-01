@@ -30,7 +30,7 @@ public class CommandDev extends SporzSubcommand
 
 	@Override
 	public String getCommandShortUsage(ICommandSender sender) {
-		return _("dev [ pigs reset|<num> ] | [ seed <num> ] | [ <player> <cmd> ]");
+		return _("dev pigs reset OR pigs <num> OR seed <num> OR <player> <cmd>");
 	}
 
 	@Override

@@ -22,7 +22,7 @@ public class CommandRules extends SporzSubcommand
 
 	@Override
 	public String getCommandShortUsage(ICommandSender sender) {
-		return _("rules (init|set <var> <num>)");
+		return _("rules init OR set <var> <num>");
 	}
 
 	@Override

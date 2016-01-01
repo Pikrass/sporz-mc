@@ -18,12 +18,12 @@ public class CommandCount extends ActionCommand<CmdCountHandler> {
 
 	@Override
 	public String getCommandShortUsage(ICommandSender sender) {
-		return _("count yes|no");
+		return _("count <yes|no>");
 	}
 
 	@Override
 	public String getCommandUsage(ICommandSender sender) {
-		return _("count yes|no");
+		return _("count <yes|no>");
 	}
 
 	@Override

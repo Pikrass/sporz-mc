@@ -18,12 +18,12 @@ public class CommandGenet extends ActionCommand<CmdGenetHandler> {
 
 	@Override
 	public String getCommandShortUsage(ICommandSender sender) {
-		return _("genet <player>|none");
+		return _("genet <player|none>");
 	}
 
 	@Override
 	public String getCommandUsage(ICommandSender sender) {
-		return _("genet <player>|none");
+		return _("genet <player|none>");
 	}
 
 	@Override

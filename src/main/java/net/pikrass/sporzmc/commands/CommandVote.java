@@ -33,17 +33,24 @@ public class CommandVote extends ActionCommand<CmdVoteHandler> {
 		Set<Player> choices = handler.getVoteChoices();
 
 		if(choices == null)
-			return _("vote <player>|none");
+			return _("vote <player|none>");
 
-		StringBuffer buf = new StringBuffer("vote ");
+		boolean nobody = false;
+
+		StringBuffer buf = new StringBuffer(_("vote")+" <");
 		for(Player player : choices) {
 			if(player.isNobody())
-				buf.append(_("none")+"|");
+				nobody = true;
 			else
 				buf.append(player.getName()+"|");
 		}
 
-		return buf.substring(0, buf.length()-1).toString();
+		if(nobody)
+			buf.append(_("none")+">");
+		else
+			buf.deleteCharAt(buf.length()-1).append(">");
+
+		return buf.toString();
 	}
 
 	@Override

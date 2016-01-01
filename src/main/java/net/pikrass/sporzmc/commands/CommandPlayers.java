@@ -22,7 +22,7 @@ public class CommandPlayers extends SporzSubcommand
 
 	@Override
 	public String getCommandShortUsage(ICommandSender sender) {
-		return _("players [init | (add|remove) <player>]");
+		return _("players init OR <add|remove> <player>");
 	}
 
 	@Override

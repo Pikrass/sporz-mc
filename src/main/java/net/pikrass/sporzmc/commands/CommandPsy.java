@@ -18,12 +18,12 @@ public class CommandPsy extends ActionCommand<CmdPsyHandler> {
 
 	@Override
 	public String getCommandShortUsage(ICommandSender sender) {
-		return _("psy <player>|none");
+		return _("psy <player|none>");
 	}
 
 	@Override
 	public String getCommandUsage(ICommandSender sender) {
-		return _("psy <player>|none");
+		return _("psy <player|none>");
 	}
 
 	@Override

@@ -109,12 +109,12 @@ public class CommandHack extends ActionCommand<CmdHackHandler> {
 	}
 
 	private String getChoiceString(CmdHackHandler handler) {
-		StringBuffer str = new StringBuffer();
+		StringBuffer str = new StringBuffer("<");
 		for(String choice : makeChoices(handler).keySet()) {
 			str.append(choice);
 			str.append("|");
 		}
-		str.append(_("none"));
+		str.append(_("none")+">");
 
 		return str.toString();
 	}

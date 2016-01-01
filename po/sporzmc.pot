@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-02 00:04+0900\n"
+"POT-Creation-Date: 2016-01-02 00:17+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,11 +31,11 @@ msgstr ""
 #: src/main/java/net/pikrass/sporzmc/commands/CommandKill.java:39
 #: src/main/java/net/pikrass/sporzmc/commands/CommandMutate.java:39
 #: src/main/java/net/pikrass/sporzmc/commands/CommandParalyse.java:39
-#: src/main/java/net/pikrass/sporzmc/commands/CommandGenet.java:43
 #: src/main/java/net/pikrass/sporzmc/commands/CommandHeal.java:39
+#: src/main/java/net/pikrass/sporzmc/commands/CommandGenet.java:43
 #: src/main/java/net/pikrass/sporzmc/commands/CommandPsy.java:43
 #: src/main/java/net/pikrass/sporzmc/commands/CommandSpy.java:43
-#: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:63
+#: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:70
 msgid "This player doesn't exist"
 msgstr ""
 
@@ -43,14 +43,14 @@ msgstr ""
 #: src/main/java/net/pikrass/sporzmc/commands/CommandKill.java:43
 #: src/main/java/net/pikrass/sporzmc/commands/CommandMutate.java:43
 #: src/main/java/net/pikrass/sporzmc/commands/CommandParalyse.java:43
-#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:46
 #: src/main/java/net/pikrass/sporzmc/commands/CommandDone.java:29
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHeal.java:43
+#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:46
 #: src/main/java/net/pikrass/sporzmc/commands/CommandGenet.java:47
 #: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:56
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHeal.java:43
 #: src/main/java/net/pikrass/sporzmc/commands/CommandPsy.java:47
 #: src/main/java/net/pikrass/sporzmc/commands/CommandSpy.java:47
-#: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:73
+#: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:80
 msgid "Your choice has been saved"
 msgstr ""
 
@@ -81,13 +81,180 @@ msgstr ""
 msgid "paralyse <player>"
 msgstr ""
 
+#: src/main/java/net/pikrass/sporzmc/commands/SporzSubcommand.java:22
+#: src/main/java/net/pikrass/sporzmc/commands/SporzSubcommand.java:33
+msgid "/sporz "
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/SporzSubcommand.java:29
+msgid "Usage: /sporz "
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandClear.java:14
+#: src/main/java/net/pikrass/sporzmc/commands/CommandClear.java:19
+#: src/main/java/net/pikrass/sporzmc/commands/CommandClear.java:24
+msgid "clear"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandClear.java:29
+msgid "Your choice has been cleared"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDone.java:14
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDone.java:19
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDone.java:24
+msgid "done"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHeal.java:16
+msgid "heal"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHeal.java:21
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHeal.java:26
+msgid "heal <player>"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:71
+msgid "/sporz <command|help>"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:76
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:84
+msgid "help"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:92
+msgid "Unknown command. Try /sporz help for a list of commands"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:128
+msgid "Available sporz commands:"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:21
+#: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:26
+#: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:31
+msgid "start"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:44
+msgid "There aren't enough players for the configured rules"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:16
+msgid "count"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:21
+#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:26
+msgid "count <yes|no>"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:37
+msgid "yes"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:39
+msgid "no"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:42
+msgid "Please choose between yes or no"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:28
+msgid "dev"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:33
+msgid "dev pigs reset OR pigs <num> OR seed <num> OR <player> <cmd>"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:39
+msgid "dev pigs reset"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:40
+msgid "dev pigs <num>"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:41
+msgid "dev seed <num>"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:42
+msgid "dev <player> <cmd> <args>..."
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:47
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:119
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:120
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:127
+msgid "pigs"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:48
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:128
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:129
+msgid "reset"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:57
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:121
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:122
+msgid "seed"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandGenet.java:16
+msgid "genet"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandGenet.java:21
+#: src/main/java/net/pikrass/sporzmc/commands/CommandGenet.java:26
+msgid "genet <player|none>"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandGenet.java:37
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:45
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:68
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:69
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:117
+#: src/main/java/net/pikrass/sporzmc/commands/CommandPsy.java:37
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSpy.java:37
+#: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:49
+#: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:64
+msgid "none"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:24
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:29
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:34
+msgid "hack"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:97
+msgctxt "hack choice"
+msgid "psy"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:98
+msgctxt "hack choice"
+msgid "genet"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:99
+msgctxt "hack choice"
+msgid "eng"
+msgstr ""
+
 #: src/main/java/net/pikrass/sporzmc/commands/CommandPlayers.java:20
 #: src/main/java/net/pikrass/sporzmc/commands/CommandPlayers.java:31
 msgid "players"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandPlayers.java:25
-msgid "players [init | (add|remove) <player>]"
+msgid "players init OR <add|remove> <player>"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandPlayers.java:32
@@ -141,13 +308,22 @@ msgstr ""
 msgid "Player %s removed"
 msgstr ""
 
+#: src/main/java/net/pikrass/sporzmc/commands/CommandPsy.java:16
+msgid "psy"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandPsy.java:21
+#: src/main/java/net/pikrass/sporzmc/commands/CommandPsy.java:26
+msgid "psy <player|none>"
+msgstr ""
+
 #: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:20
 #: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:31
 msgid "rules"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:25
-msgid "rules (init|set <var> <num>)"
+msgid "rules init OR set <var> <num>"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandRules.java:32
@@ -274,172 +450,6 @@ msgstr ""
 msgid "Rules"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/SporzSubcommand.java:22
-#: src/main/java/net/pikrass/sporzmc/commands/SporzSubcommand.java:33
-msgid "/sporz "
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/SporzSubcommand.java:29
-msgid "Usage: /sporz "
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandClear.java:14
-#: src/main/java/net/pikrass/sporzmc/commands/CommandClear.java:19
-#: src/main/java/net/pikrass/sporzmc/commands/CommandClear.java:24
-msgid "clear"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandClear.java:29
-msgid "Your choice has been cleared"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:16
-msgid "count"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:21
-#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:26
-msgid "count yes|no"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:37
-msgid "yes"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:39
-msgid "no"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandCount.java:42
-msgid "Please choose between yes or no"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:28
-msgid "dev"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:33
-msgid "dev [ pigs reset|<num> ] | [ seed <num> ] | [ <player> <cmd> ]"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:39
-msgid "dev pigs reset"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:40
-msgid "dev pigs <num>"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:41
-msgid "dev seed <num>"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:42
-msgid "dev <player> <cmd> <args>..."
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:47
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:119
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:120
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:127
-msgid "pigs"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:48
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:128
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:129
-msgid "reset"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:57
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:121
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:122
-msgid "seed"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDone.java:14
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDone.java:19
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDone.java:24
-msgid "done"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandGenet.java:16
-msgid "genet"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandGenet.java:21
-#: src/main/java/net/pikrass/sporzmc/commands/CommandGenet.java:26
-msgid "genet <player>|none"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandGenet.java:37
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:45
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:68
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:69
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:117
-#: src/main/java/net/pikrass/sporzmc/commands/CommandPsy.java:37
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSpy.java:37
-#: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:41
-#: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:57
-msgid "none"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:24
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:29
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:34
-msgid "hack"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:97
-msgctxt "hack choice"
-msgid "psy"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:98
-msgctxt "hack choice"
-msgid "genet"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHack.java:99
-msgctxt "hack choice"
-msgid "eng"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHeal.java:16
-msgid "heal"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHeal.java:21
-#: src/main/java/net/pikrass/sporzmc/commands/CommandHeal.java:26
-msgid "heal <player>"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandPsy.java:16
-msgid "psy"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandPsy.java:21
-#: src/main/java/net/pikrass/sporzmc/commands/CommandPsy.java:26
-msgid "psy <player>|none"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:71
-msgid "/sporz <command|help>"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:76
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:84
-msgid "help"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:92
-msgid "Unknown command. Try /sporz help for a list of commands"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:128
-msgid "Available sporz commands:"
-msgstr ""
-
 #: src/main/java/net/pikrass/sporzmc/commands/CommandSpy.java:16
 #: src/main/java/net/pikrass/sporzmc/MCPlayer.java:391
 msgid "spy"
@@ -447,28 +457,19 @@ msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandSpy.java:21
 #: src/main/java/net/pikrass/sporzmc/commands/CommandSpy.java:26
-msgid "spy <player>|none"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:21
-#: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:26
-#: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:31
-msgid "start"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:44
-msgid "There aren't enough players for the configured rules"
+msgid "spy <player|none>"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:19
+#: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:40
 msgid "vote"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:36
-msgid "vote <player>|none"
+msgid "vote <player|none>"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:69
+#: src/main/java/net/pikrass/sporzmc/commands/CommandVote.java:76
 msgid "This choice is unavailable"
 msgstr ""
 
