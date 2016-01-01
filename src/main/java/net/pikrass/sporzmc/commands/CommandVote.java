@@ -7,8 +7,11 @@ import net.pikrass.sporzmc.SporzMC;
 import net.pikrass.sporzmc.handlers.CmdVoteHandler;
 
 import net.pikrass.sporz.Player;
+import net.pikrass.sporz.actions.InvalidChoiceException;
 
 import net.minecraft.command.ICommandSender;
+
+import java.util.Set;
 
 public class CommandVote extends ActionCommand<CmdVoteHandler> {
 	@Override
@@ -17,13 +20,30 @@ public class CommandVote extends ActionCommand<CmdVoteHandler> {
 	}
 
 	@Override
-	public String getCommandShortUsage(ICommandSender sender) {
-		return _("vote <player>|none");
+	public String getCommandShortUsage(ICommandSender sender, CmdVoteHandler handler) {
+		return getUsage(handler);
 	}
 
 	@Override
-	public String getCommandUsage(ICommandSender sender) {
-		return _("vote <player>|none");
+	public String getCommandUsage(ICommandSender sender, CmdVoteHandler handler) {
+		return getUsage(handler);
+	}
+
+	private String getUsage(CmdVoteHandler handler) {
+		Set<Player> choices = handler.getVoteChoices();
+
+		if(choices == null)
+			return _("vote <player>|none");
+
+		StringBuffer buf = new StringBuffer("vote ");
+		for(Player player : choices) {
+			if(player.isNobody())
+				buf.append(_("none")+"|");
+			else
+				buf.append(player.getName()+"|");
+		}
+
+		return buf.substring(0, buf.length()-1).toString();
 	}
 
 	@Override
@@ -44,8 +64,16 @@ public class CommandVote extends ActionCommand<CmdVoteHandler> {
 			return;
 		}
 
+		Set<Player> choices = handler.getVoteChoices();
+		if(choices != null && !choices.contains(target)) {
+			sendMsg(sender, red(_("This choice is unavailable")));
+			return;
+		}
+
 		sendMsg(sender, green(_("Your choice has been saved")));
-		handler.vote(target);
+		try {
+			handler.vote(target);
+		} catch(InvalidChoiceException e) {
+		}
 	}
 }
-

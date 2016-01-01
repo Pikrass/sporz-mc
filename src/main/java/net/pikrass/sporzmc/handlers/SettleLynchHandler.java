@@ -2,17 +2,19 @@ package net.pikrass.sporzmc.handlers;
 
 import net.pikrass.sporzmc.*;
 import net.pikrass.sporz.*;
-import net.pikrass.sporz.actions.Lynch;
+import net.pikrass.sporz.actions.SettleLynch;
+import net.pikrass.sporz.actions.InvalidChoiceException;
 
 import java.util.Set;
+import java.util.HashSet;
 
-public class LynchHandler extends ActionHandler
+public class SettleLynchHandler extends ActionHandler
 implements CmdClearHandler, CmdVoteHandler {
 	private Game game;
 	private MCPlayer player;
-	private Lynch action;
+	private SettleLynch action;
 
-	public LynchHandler(Game game, MCPlayer player, Lynch action) {
+	public SettleLynchHandler(Game game, MCPlayer player, SettleLynch action) {
 		this.game = game;
 		this.player = player;
 		this.action = action;
@@ -28,8 +30,8 @@ implements CmdClearHandler, CmdVoteHandler {
 		SporzMC.getCommand().getCommandVote().unregister(player, this);
 	}
 
-	public void vote(Player p) {
-		action.choose(player, action.new Vote(p));
+	public void vote(Player p) throws InvalidChoiceException {
+		action.choose(player, action.new Do(p));
 	}
 
 	public void clear() {
@@ -37,6 +39,6 @@ implements CmdClearHandler, CmdVoteHandler {
 	}
 
 	public Set<Player> getVoteChoices() {
-		return null;
+		return action.getChoices();
 	}
 }

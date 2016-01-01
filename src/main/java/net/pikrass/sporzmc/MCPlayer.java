@@ -370,7 +370,12 @@ public class MCPlayer extends Player {
 		}
 	}
 	public void notify(LynchSettling event) {
-		//TODO
+		if(event.getTarget().equals(Player.NOBODY)) {
+			sendMsg(blue(_("The captain chose not to kill anybody")));
+		} else {
+			sendMsg(blue(String.format(_("The captain decided to kill %s"), event.getTarget())));
+			revealPlayer(event.getTarget());
+		}
 	}
 
 	private void revealPlayer(Player p) {
@@ -467,7 +472,11 @@ public class MCPlayer extends Player {
 		sendMsg(gold(_("Talk with the other astronauts, and vote to kill (or not) someone!")));
 	}
 	public void ask(Game game, SettleLynch action) {
-		//TODO
+		SettleLynchHandler handler = new SettleLynchHandler(game, this, action);
+		handlers.put(action, handler);
+		handler.start();
+
+		sendMsg(gold(_("As captain of this ship, vote again to break the tie")));
 	}
 
 
