@@ -35,6 +35,9 @@ public class CommandStart extends SporzSubcommand
 	public void execute(ICommandSender sender, String[] params) {
 		Game game = SporzMC.initGame();
 		try {
+			SporzMC.resetMasters();
+			SporzMC.addMaster(sender);
+
 			SporzMC.useCurrentPlayers();
 			SporzMC.getRules().apply(game);
 			assignRooms();

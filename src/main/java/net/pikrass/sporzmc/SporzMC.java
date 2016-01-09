@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.config.Configuration;
 
+import net.minecraft.command.ICommandSender;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Vec3;
 
@@ -20,6 +21,8 @@ import net.pikrass.sporz.CustomRules;
 import java.util.Locale;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +43,14 @@ public class SporzMC
 	@Instance(SporzMC.MODID)
 	public static SporzMC instance;
 
+	private CommandSporz command;
+	private Configuration config;
+	private Game game;
+	private Map<String, MCPlayer> players;
+	private Set<String> masters;
+	private CustomRules rules;
+
+
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		this.config = new Configuration(event.getSuggestedConfigurationFile());
@@ -51,21 +62,15 @@ public class SporzMC
 	public void serverLoad(FMLServerStartingEvent event) {
 		command = new CommandSporz();
 		players = new HashMap<String, MCPlayer>();
+		masters = new HashSet<String>();
 		rules = new CustomRules();
 		event.registerServerCommand(command);
 	}
 
 
-	private CommandSporz command;
-
 	public static CommandSporz getCommand() {
 		return instance.command;
 	}
-
-	private Configuration config;
-	private Game game;
-	private Map<String, MCPlayer> players;
-	private CustomRules rules;
 
 	public static void startGame() {
 		instance.game.start();
@@ -91,6 +96,18 @@ public class SporzMC
 
 	public static Map<String, MCPlayer> getPlayers() {
 		return instance.players;
+	}
+
+	public static void resetMasters() {
+		instance.masters.clear();
+	}
+
+	public static void addMaster(ICommandSender sender) {
+		instance.masters.add(sender.getName());
+	}
+
+	public static boolean isMaster(ICommandSender sender) {
+		return instance.masters.contains(sender.getName());
 	}
 
 	public static void useCurrentPlayers() {
