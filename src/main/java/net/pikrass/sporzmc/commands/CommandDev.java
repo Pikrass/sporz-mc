@@ -20,7 +20,6 @@ import java.util.List;
 import java.util.LinkedList;
 import java.util.Arrays;
 
-import java.lang.reflect.*;
 public class CommandDev extends SporzSubcommand
 {
 	@Override
@@ -30,7 +29,7 @@ public class CommandDev extends SporzSubcommand
 
 	@Override
 	public String getCommandShortUsage(ICommandSender sender) {
-		return _("dev pigs reset OR pigs <num> OR seed <num> OR <player> <cmd>");
+		return _("dev pigs reset OR pigs <num> OR seed <num>");
 	}
 
 	@Override
@@ -38,8 +37,7 @@ public class CommandDev extends SporzSubcommand
 		return
 			_("dev pigs reset")+"\n"+
 			_("dev pigs <num>")+"\n"+
-			_("dev seed <num>")+"\n"+
-			_("dev <player> <cmd> <args>...");
+			_("dev seed <num>");
 	}
 
 	@Override
@@ -56,12 +54,6 @@ public class CommandDev extends SporzSubcommand
 			}
 		} else if(params.length == 2 && params[0].equals(_("seed"))) {
 			seedRNG(Long.parseLong(params[1]));
-		} else if(params.length >= 2) {
-			MCPlayer player = SporzMC.getPlayers().get(params[0]);
-			if(player == null)
-				printShortUsage(sender);
-			else
-				sendCommandAs(player, Arrays.copyOfRange(params, 1, params.length));
 		} else {
 			printShortUsage(sender);
 		}
@@ -105,13 +97,6 @@ public class CommandDev extends SporzSubcommand
 		SporzMC.getRules().seedRNG(seed);
 	}
 
-	private void sendCommandAs(MCPlayer player, String[] args) {
-		try {
-			SporzMC.getCommand().execute(player.getCommandSender(), args);
-		} catch(CommandException e) {
-		}
-	}
-
 	@Override
 	public List addTabCompletionOptions(ICommandSender sender, String[] args, BlockPos pos) {
 		List<String> list = new LinkedList<String>();
@@ -120,19 +105,9 @@ public class CommandDev extends SporzSubcommand
 				list.add(_("pigs"));
 			if(_("seed").startsWith(args[0]))
 				list.add(_("seed"));
-			for(String name : SporzMC.getPlayers().keySet()) {
-				if(name.startsWith(args[0]))
-					list.add(name);
-			}
 		} else if(args.length == 2 && args[0].equals(_("pigs"))) {
 			if(_("reset").startsWith(args[1]))
 				list.add(_("reset"));
-		} else if(args.length >= 2) {
-			MCPlayer player = SporzMC.getPlayers().get(args[0]);
-			if(player != null)
-				return SporzMC.getCommand().addTabCompletionOptions(
-						player.getCommandSender(),
-						Arrays.copyOfRange(args, 1, args.length), pos);
 		}
 		return list;
 	}

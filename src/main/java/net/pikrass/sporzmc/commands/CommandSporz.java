@@ -41,6 +41,7 @@ public class CommandSporz extends CommandBase
 		cmds.add(new CommandRules());
 		cmds.add(new CommandStart());
 		cmds.add(new CommandEnd());
+		cmds.add(new CommandPlayas());
 
 		cmds.add(this.commandClear = new CommandClear());
 		cmds.add(this.commandElect = new CommandElect());
