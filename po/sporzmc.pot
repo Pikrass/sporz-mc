@@ -505,20 +505,47 @@ msgstr ""
 msgid "%s, %s"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:72
+#: src/main/java/net/pikrass/sporzmc/commands/CommandEnd.java:20
+msgid "end"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandEnd.java:25
+#: src/main/java/net/pikrass/sporzmc/commands/CommandEnd.java:30
+msgid "end [humans|mutants|draw] [reason]"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandEnd.java:39
+#: src/main/java/net/pikrass/sporzmc/commands/CommandEnd.java:75
+#: src/main/java/net/pikrass/sporzmc/commands/CommandEnd.java:76
+msgid "humans"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandEnd.java:41
+#: src/main/java/net/pikrass/sporzmc/commands/CommandEnd.java:77
+#: src/main/java/net/pikrass/sporzmc/commands/CommandEnd.java:78
+msgid "mutants"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandEnd.java:43
+#: src/main/java/net/pikrass/sporzmc/commands/CommandEnd.java:79
+#: src/main/java/net/pikrass/sporzmc/commands/CommandEnd.java:80
+msgid "draw"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:73
 msgid "/sporz <command|help>"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:77
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:85
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:78
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:86
 msgid "help"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:93
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:94
 msgid "Unknown command. Try /sporz help for a list of commands"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:129
+#: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:130
 msgid "Available sporz commands:"
 msgstr ""
 
