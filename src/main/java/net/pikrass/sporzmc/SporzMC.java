@@ -12,10 +12,12 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Vec3;
 
 import net.pikrass.sporzmc.commands.CommandSporz;
+import net.pikrass.sporzmc.util.I18n;
 
 import net.pikrass.sporz.Game;
 import net.pikrass.sporz.CustomRules;
 
+import java.util.Locale;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
@@ -42,6 +44,7 @@ public class SporzMC
 	public void preInit(FMLPreInitializationEvent event) {
 		this.config = new Configuration(event.getSuggestedConfigurationFile());
 		this.config.load();
+		I18n.init(Locale.ENGLISH);
 	}
 
 	@EventHandler
