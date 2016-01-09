@@ -24,6 +24,9 @@ public class MasterEventReceiver implements Master {
 	}
 
 	public void notifyRound(int num, RoundPeriod period) {
+		SporzMC.setRound(num);
+		SporzMC.setRoundPeriod(period);
+
 		if(period == RoundPeriod.DAY)
 			sendMsg(String.format(_("========= DAY %d ========="), num));
 		else

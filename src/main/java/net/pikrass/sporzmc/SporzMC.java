@@ -17,6 +17,7 @@ import net.pikrass.sporzmc.util.I18n;
 
 import net.pikrass.sporz.Game;
 import net.pikrass.sporz.CustomRules;
+import net.pikrass.sporz.RoundPeriod;
 
 import java.util.Locale;
 import java.util.HashMap;
@@ -49,6 +50,9 @@ public class SporzMC
 	private Map<String, MCPlayer> players;
 	private Set<String> masters;
 	private CustomRules rules;
+	private boolean started;
+	private int round;
+	private RoundPeriod period;
 
 
 	@EventHandler
@@ -64,6 +68,7 @@ public class SporzMC
 		players = new HashMap<String, MCPlayer>();
 		masters = new HashSet<String>();
 		rules = new CustomRules();
+		started = false;
 		event.registerServerCommand(command);
 	}
 
@@ -73,6 +78,7 @@ public class SporzMC
 	}
 
 	public static void startGame() {
+		instance.started = true;
 		instance.game.start();
 	}
 
@@ -83,6 +89,7 @@ public class SporzMC
 	public static Game initGame() {
 		if(instance.game != null)
 			instance.game.end();
+		instance.started = false;
 		instance.game = new Game();
 		instance.game.setMaster(new MasterEventReceiver());
 		return instance.game;
@@ -92,6 +99,11 @@ public class SporzMC
 		if(instance.game != null)
 			instance.game.end();
 		instance.game = null;
+		instance.started = false;
+	}
+
+	public static boolean isStarted() {
+		return instance.started;
 	}
 
 	public static Map<String, MCPlayer> getPlayers() {
@@ -119,6 +131,22 @@ public class SporzMC
 
 	public static CustomRules getRules() {
 		return instance.rules;
+	}
+
+	public static void setRound(int num) {
+		instance.round = num;
+	}
+
+	public static void setRoundPeriod(RoundPeriod period) {
+		instance.period = period;
+	}
+
+	public static int getRound() {
+		return instance.round;
+	}
+
+	public static RoundPeriod getRoundPeriod() {
+		return instance.period;
 	}
 
 

@@ -36,6 +36,7 @@ public class CommandSporz extends CommandBase
 
 	public CommandSporz() {
 		LinkedList<SporzSubcommand> cmds = new LinkedList<SporzSubcommand>();
+		cmds.add(new CommandInfo());
 		cmds.add(new CommandPlayers());
 		cmds.add(new CommandRules());
 		cmds.add(new CommandStart());

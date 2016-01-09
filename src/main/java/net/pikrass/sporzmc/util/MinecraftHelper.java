@@ -34,6 +34,12 @@ public class MinecraftHelper
 		return msg;
 	}
 
+	public static IChatComponent strike(String m) {
+		IChatComponent msg = new ChatComponentText(m);
+		msg.getChatStyle().setStrikethrough(true);
+		return msg;
+	}
+
 	public static void sendMsg(ICommandSender recv, String msg) {
 		recv.addChatMessage(new ChatComponentText(msg));
 	}
