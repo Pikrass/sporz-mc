@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-15 20:55+0900\n"
+"POT-Creation-Date: 2016-01-15 20:56+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -133,7 +133,7 @@ msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandSpy.java:16
 #: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:96
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:138
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:178
 msgid "spy"
 msgstr ""
 
@@ -438,62 +438,62 @@ msgid "%s: %s"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:90
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:132
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:172
 msgid "astronaut"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:91
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:133
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:173
 msgid "doctor"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:92
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:134
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:174
 msgid "psychologist"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:93
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:135
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:175
 msgid "geneticist"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:94
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:136
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:176
 msgid "computer engineer"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:95
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:137
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:177
 msgid "hacker"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:97
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:139
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:179
 msgid "traitor"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:102
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:143
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:183
 msgid "resistant"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:103
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:144
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:184
 msgid "standard"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:104
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:145
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:185
 msgid "host"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:109
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:149
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:189
 msgid "human"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:111
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:151
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:191
 msgid "mutant"
 msgstr ""
 
@@ -749,43 +749,43 @@ msgstr ""
 msgid "sequenced by genet n°%d"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:347
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:349
 msgid "We are in need of a captain! Vote with the /sporz elect command"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:354
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:356
 msgid "Mutants, you may now mutate or kill, in addition to paralyse, players"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:362
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:364
 msgid "Doctors, you can now heal or kill players"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:370
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:372
 msgid "Choose someone to psychoanalyse"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:377
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:379
 msgid "Choose someone whose genome to sequence"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:384
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:386
 msgid "Choose whether you want to count the mutants"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:391
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:393
 msgid "Choose a role to hack"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:398
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:400
 msgid "Choose a player to spy on"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:405
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:407
 msgid "Talk with the other astronauts, and vote to kill (or not) someone!"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:412
+#: src/main/java/net/pikrass/sporzmc/MCPlayer.java:414
 msgid "As captain of this ship, vote again to break the tie"
 msgstr ""
 
@@ -845,6 +845,39 @@ msgstr ""
 msgid "The captain decided to kill %s"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:153
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:130
+msgid "=== The game is over! Humans win! ==="
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:133
+msgid "=== The game is over! Mutants win! ==="
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:136
+msgid "=== The game is over! Nobody won... ==="
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:143
+msgid "Reason: there is no mutant left"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:145
+msgid "Reason: there is no human left"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:149
+msgid "Reason: it's now impossible for mutants to win"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:151
+msgid "Reason: it's now impossible for humans to win"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:154
+msgid "Reason: "
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:194
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:196
 msgid "%s was %s, %s, %s"
 msgstr ""

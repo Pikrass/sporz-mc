@@ -28,10 +28,24 @@ public class MinecraftHelper
 		return color(m, EnumChatFormatting.GOLD);
 	}
 
+	public static IChatComponent purple(String m) {
+		return color(m, EnumChatFormatting.LIGHT_PURPLE);
+	}
+
 	private static IChatComponent color(String m, EnumChatFormatting color) {
 		IChatComponent msg = new ChatComponentText(m);
 		msg.getChatStyle().setColor(color);
 		return msg;
+	}
+
+	public static IChatComponent bold(IChatComponent msg) {
+		msg.getChatStyle().setBold(true);
+		return msg;
+	}
+
+	public static IChatComponent bold(String m) {
+		IChatComponent msg = new ChatComponentText(m);
+		return bold(msg);
 	}
 
 	public static IChatComponent strike(String m) {

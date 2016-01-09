@@ -61,7 +61,7 @@ public class MasterEventReceiver implements Master {
 		else
 			sendMsg(red(String.format(_("Doctors killed %s"), event.getTarget())));
 
-		revealPlayer(event.getTarget());
+		revealPlayer(event.getTarget(), true);
 	}
 
 	public void notify(Healing event) {
@@ -111,7 +111,7 @@ public class MasterEventReceiver implements Master {
 			sendMsg(blue(_("Nobody is to be killed today")));
 		} else {
 			sendMsg(blue(String.format(_("You decided to kill %s"), event.getTarget())));
-			revealPlayer(event.getTarget());
+			revealPlayer(event.getTarget(), true);
 		}
 	}
 
@@ -120,12 +120,52 @@ public class MasterEventReceiver implements Master {
 			sendMsg(blue(_("The captain chose not to kill anybody")));
 		} else {
 			sendMsg(blue(String.format(_("The captain decided to kill %s"), event.getTarget())));
-			revealPlayer(event.getTarget());
+			revealPlayer(event.getTarget(), true);
 		}
 	}
 
+	public void notify(EndGame event) {
+		switch(event.getWinner()) {
+			case HUMANS:
+				sendMsg(bold(purple(_("=== The game is over! Humans win! ==="))));
+				break;
+			case MUTANTS:
+				sendMsg(bold(purple(_("=== The game is over! Mutants win! ==="))));
+				break;
+			case DRAW:
+				sendMsg(bold(purple(_("=== The game is over! Nobody won... ==="))));
+				break;
+		}
 
-	private void revealPlayer(Player p) {
+		switch(event.getReason()) {
+			case ANNIHILATION:
+				if(event.getWinner() == EndGame.Winner.HUMANS)
+					sendMsg(purple(_("Reason: there is no mutant left")));
+				else
+					sendMsg(purple(_("Reason: there is no human left")));
+				break;
+			case ASSURED_VICTORY:
+				if(event.getWinner() == EndGame.Winner.HUMANS)
+					sendMsg(purple(_("Reason: it's now impossible for mutants to win")));
+				else
+					sendMsg(purple(_("Reason: it's now impossible for humans to win")));
+				break;
+			case CUSTOM:
+				sendMsg(purple(_("Reason: ")+event.getCustomReason()));
+				break;
+			case NO_REASON:
+				break;
+		}
+
+		for(MCPlayer player : SporzMC.getPlayers().values()) {
+			revealPlayer(player, false);
+		}
+
+		SporzMC.endGame();
+	}
+
+
+	private void revealPlayer(Player p, boolean death) {
 		String r = "", g = "", s = "";
 
 		switch(p.getRole()) {
@@ -150,6 +190,9 @@ public class MasterEventReceiver implements Master {
 		else
 			s = _("mutant");
 
-		sendMsg(red(String.format(_("%s was %s, %s, %s"), p, r, g, s)));
+		if(death)
+			sendMsg(red(String.format(_("%s was %s, %s, %s"), p, r, g, s)));
+		else
+			sendMsg(String.format(_("%s was %s, %s, %s"), p, r, g, s));
 	}
 }

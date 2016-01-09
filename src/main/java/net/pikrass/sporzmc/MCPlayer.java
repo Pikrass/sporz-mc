@@ -338,6 +338,8 @@ public class MCPlayer extends Player {
 	}
 	public void notify(LynchSettling event) {
 	}
+	public void notify(EndGame event) {
+	}
 
 	public void ask(Game game, ElectCaptain action) {
 		ElectCaptainHandler handler = new ElectCaptainHandler(game, this, action);

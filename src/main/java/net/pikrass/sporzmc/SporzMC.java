@@ -18,6 +18,7 @@ import net.pikrass.sporzmc.util.I18n;
 import net.pikrass.sporz.Game;
 import net.pikrass.sporz.CustomRules;
 import net.pikrass.sporz.RoundPeriod;
+import net.pikrass.sporz.events.EndGame;
 
 import java.util.Locale;
 import java.util.HashMap;
@@ -88,7 +89,7 @@ public class SporzMC
 
 	public static Game initGame() {
 		if(instance.game != null)
-			instance.game.end();
+			instance.game.end(new EndGame(EndGame.Winner.DRAW));
 		instance.started = false;
 		instance.game = new Game();
 		instance.game.setMaster(new MasterEventReceiver());
@@ -96,8 +97,6 @@ public class SporzMC
 	}
 
 	public static void endGame() {
-		if(instance.game != null)
-			instance.game.end();
 		instance.game = null;
 		instance.started = false;
 	}
