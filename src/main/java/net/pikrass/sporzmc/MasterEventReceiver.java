@@ -5,6 +5,7 @@ import static net.pikrass.sporzmc.util.MinecraftHelper.*;
 
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.IChatComponent;
 import net.minecraft.command.ICommandSender;
 
 import net.pikrass.sporz.*;
@@ -16,7 +17,10 @@ import java.util.Iterator;
 public class MasterEventReceiver implements Master {
 	private void sendMsg(String msg) {
 		ChatComponentText comp = new ChatComponentText(msg);
-		MinecraftServer.getServer().getConfigurationManager().sendChatMsg(comp);
+		sendMsg(comp);
+	}
+	private void sendMsg(IChatComponent msg) {
+		MinecraftServer.getServer().getConfigurationManager().sendChatMsg(msg);
 	}
 
 	public void notifyRound(int num, RoundPeriod period) {

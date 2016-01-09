@@ -2,56 +2,44 @@ package net.pikrass.sporzmc.util;
 
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.IChatComponent;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.command.ICommandSender;
 
 public class MinecraftHelper
 {
-	private static final String
-		BLACK      = "§0",
-		DBLUE      = "§1",
-		DGREEN     = "§2",
-		DAQUA      = "§3",
-		DREQ       = "§4",
-		DPURPLE    = "§5",
-		GOLD       = "§6",
-		GRAY       = "§7",
-		DGRAY      = "§8",
-		BLUE       = "§9",
-		GREEN      = "§a",
-		AQUA       = "§b",
-		RED        = "§c",
-		PURPLE     = "§d",
-		YELLOW     = "§e",
-		WHITE      = "§f",
-		OBFUSCATED = "§k",
-		BOLD       = "§l",
-		STRIKE     = "§m",
-		UNDERLINE  = "§n",
-		ITALIC     = "§o",
-		RESET      = "§r";
-
-	public static String red(String m) {
-		return RED+m+RESET;
+	public static IChatComponent red(String m) {
+		return color(m, EnumChatFormatting.RED);
 	}
 
-	public static String dgreen(String m) {
-		return DGREEN+m+RESET;
+	public static IChatComponent dgreen(String m) {
+		return color(m, EnumChatFormatting.DARK_GREEN);
 	}
 
-	public static String green(String m) {
-		return GREEN+m+RESET;
+	public static IChatComponent green(String m) {
+		return color(m, EnumChatFormatting.GREEN);
 	}
 
-	public static String blue(String m) {
-		return BLUE+m+RESET;
+	public static IChatComponent blue(String m) {
+		return color(m, EnumChatFormatting.BLUE);
 	}
 
-	public static String gold(String m) {
-		return GOLD+m+RESET;
+	public static IChatComponent gold(String m) {
+		return color(m, EnumChatFormatting.GOLD);
+	}
+
+	private static IChatComponent color(String m, EnumChatFormatting color) {
+		IChatComponent msg = new ChatComponentText(m);
+		msg.getChatStyle().setColor(color);
+		return msg;
 	}
 
 	public static void sendMsg(ICommandSender recv, String msg) {
 		recv.addChatMessage(new ChatComponentText(msg));
+	}
+
+	public static void sendMsg(ICommandSender recv, IChatComponent msg) {
+		recv.addChatMessage(msg);
 	}
 
 	public static boolean isOp(String username) {

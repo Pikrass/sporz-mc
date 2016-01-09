@@ -20,6 +20,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Vec3;
+import net.minecraft.util.IChatComponent;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -94,6 +95,13 @@ public class MCPlayer extends Player {
 	}
 
 	protected void sendMsg(String message) {
+		Entity entity = getEntity();
+		if(entity == null)
+			return;
+
+		net.pikrass.sporzmc.util.MinecraftHelper.sendMsg(entity, message);
+	}
+	protected void sendMsg(IChatComponent message) {
 		Entity entity = getEntity();
 		if(entity == null)
 			return;

@@ -28,12 +28,13 @@ public class PigPlayer extends MCPlayer implements ICommandSender {
 		return entity;
 	}
 
+	@Override
 	protected void sendMsg(String message) {
-		message = "<"+getName()+"> " + message;
-
-		ServerConfigurationManager manager =
-			MinecraftServer.getServer().getConfigurationManager();
-		manager.sendChatMsg(new ChatComponentText(message));
+		net.pikrass.sporzmc.util.MinecraftHelper.sendMsg(this, message);
+	}
+	@Override
+	protected void sendMsg(IChatComponent message) {
+		net.pikrass.sporzmc.util.MinecraftHelper.sendMsg(this, message);
 	}
 
 	public ICommandSender getCommandSender() {
