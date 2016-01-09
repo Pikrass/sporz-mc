@@ -66,6 +66,8 @@ public class CommandStart extends SporzSubcommand
 
 	@Override
 	public boolean canCommandSenderUse(ICommandSender sender) {
+		if(SporzMC.isStarted())
+			return false;
 		return isOp(sender.getName()) || sender.canUseCommand(100, "sporz start");
 	}
 }
