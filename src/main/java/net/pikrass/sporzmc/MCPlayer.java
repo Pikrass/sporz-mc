@@ -85,6 +85,9 @@ public class MCPlayer extends Player {
 
 	private void teleport(Vec3 pos) {
 		Entity entity = getEntity();
+		if(entity == null)
+			return;
+
 		entity.setLocationAndAngles(pos.xCoord, pos.yCoord, pos.zCoord,
 				entity.rotationYaw, entity.rotationPitch);
 	}
