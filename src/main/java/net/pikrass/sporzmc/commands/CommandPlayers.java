@@ -40,10 +40,10 @@ public class CommandPlayers extends SporzSubcommand
 			showPlayers(sender);
 		} else if(params[0].equals(_("init"))) {
 			initPlayers(sender);
-		} else if(params.length == 2 && params[1].equals(_("add"))) {
-			addPlayer(sender, params[2]);
-		} else if(params.length == 2 && params[1].equals(_("remove"))) {
-			removePlayer(sender, params[2]);
+		} else if(params.length == 2 && params[0].equals(_("add"))) {
+			addPlayer(sender, params[1]);
+		} else if(params.length == 2 && params[0].equals(_("remove"))) {
+			removePlayer(sender, params[1]);
 		} else {
 			printShortUsage(sender);
 		}
