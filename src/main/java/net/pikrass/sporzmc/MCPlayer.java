@@ -298,6 +298,11 @@ public class MCPlayer extends Player {
 						event.getResult())));
 	}
 	public void notify(SpyReport event) {
+		if(!event.hasResult()) {
+			sendMsg(blue(_("You didn't spy on anybody")));
+			return;
+		}
+
 		SortedSet<SpyReport.Line> lines = event.getResult();
 		if(lines.isEmpty()) {
 			sendMsg(blue(String.format(_("Nothing happened to %s tonight"), event.getTarget())));

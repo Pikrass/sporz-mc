@@ -245,6 +245,11 @@ public class MasterEventReceiver implements Master {
 	}
 
 	public void notify(SpyReport event) {
+		if(!event.hasResult()) {
+			sendMasters(blue(String.format(_("%s didn't spy on anybody"), event.getOrigin())));
+			return;
+		}
+
 		sendMasters(blue(String.format(_("%s spied on %s"), event.getOrigin(), event.getTarget())));
 	}
 
