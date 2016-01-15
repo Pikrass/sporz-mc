@@ -265,6 +265,15 @@ public class MasterEventReceiver implements Master {
 			}
 		}
 
+		Iterator<Map.Entry<Player, Player>> it2 = event.voteIterator();
+		while(it2.hasNext()) {
+			Map.Entry<Player, Player> vote = it2.next();
+			if(vote.getValue().equals(Player.NOBODY))
+				sendMasters(String.format(_("%s voted blank"), vote.getKey()));
+			else
+				sendMasters(String.format(_("%s voted for %s"), vote.getKey(), vote.getValue()));
+		}
+
 		if(event.isDraw()) {
 			sendMsg(blue(_("There is a draw. The captain must settle the vote.")));
 		} else if(event.getTarget().equals(Player.NOBODY)) {
