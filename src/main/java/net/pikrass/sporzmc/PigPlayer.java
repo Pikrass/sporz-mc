@@ -29,6 +29,12 @@ public class PigPlayer extends MCPlayer implements ICommandSender {
 	}
 
 	@Override
+	protected void teleport(Vec3 pos) {
+		entity.setLocationAndAngles(pos.xCoord, pos.yCoord, pos.zCoord,
+				entity.rotationYaw, entity.rotationPitch);
+	}
+
+	@Override
 	protected void sendMsg(String message) {
 		net.pikrass.sporzmc.util.MinecraftHelper.sendMsg(this, message);
 	}

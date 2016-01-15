@@ -20,6 +20,7 @@ import net.minecraft.world.WorldSettings;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.world.World;
+import net.minecraft.network.play.server.S08PacketPlayerPosLook;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Vec3;
@@ -29,6 +30,7 @@ import net.minecraft.util.ChatComponentText;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.SortedSet;
+import java.util.Collections;
 
 public class MCPlayer extends Player implements ICommandSender {
 	private Map<Action, ActionHandler> handlers;
@@ -87,13 +89,19 @@ public class MCPlayer extends Player implements ICommandSender {
 		teleport(pos);
 	}
 
-	private void teleport(Vec3 pos) {
+	protected void teleport(Vec3 pos) {
 		Entity entity = getEntity();
 		if(entity == null)
 			return;
 
-		entity.setLocationAndAngles(pos.xCoord, pos.yCoord, pos.zCoord,
-				entity.rotationYaw, entity.rotationPitch);
+		((EntityPlayerMP)entity).playerNetServerHandler.setPlayerLocation(
+			pos.xCoord,
+			pos.yCoord,
+			pos.zCoord,
+			entity.rotationYaw,
+			entity.rotationPitch,
+			Collections.<S08PacketPlayerPosLook.EnumFlags>emptySet()
+			);
 	}
 
 
