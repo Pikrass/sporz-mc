@@ -113,6 +113,8 @@ public class CommandPlayers extends SporzSubcommand
 
 	@Override
 	public boolean canCommandSenderUse(ICommandSender sender) {
-		return isOp(sender.getName()) && !SporzMC.isStarted();
+		if(SporzMC.isStarted())
+			return false;
+		return isOp(sender.getName()) || sender.canUseCommand(100, "sporz players");
 	}
 }
