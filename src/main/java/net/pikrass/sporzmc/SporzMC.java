@@ -3,9 +3,12 @@ package net.pikrass.sporzmc;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.common.config.Configuration;
 
 import net.minecraft.command.ICommandSender;
@@ -54,6 +57,7 @@ public class SporzMC
 	private boolean started;
 	private int round;
 	private RoundPeriod period;
+	private String phase;
 
 
 	@EventHandler
@@ -61,6 +65,7 @@ public class SporzMC
 		this.config = new Configuration(event.getSuggestedConfigurationFile());
 		this.config.load();
 		I18n.init(Locale.ENGLISH);
+		FMLCommonHandler.instance().bus().register(this);
 	}
 
 	@EventHandler
@@ -71,6 +76,18 @@ public class SporzMC
 		rules = new CustomRules();
 		started = false;
 		event.registerServerCommand(command);
+	}
+
+	@SubscribeEvent
+	public void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
+		if(!started)
+			return;
+
+		MCPlayer player = players.get(event.player.getName());
+		if(player == null)
+			return;
+
+		player.reconnect(phase);
 	}
 
 
@@ -150,6 +167,10 @@ public class SporzMC
 
 	public static RoundPeriod getRoundPeriod() {
 		return instance.period;
+	}
+
+	public static void setPhase(String name) {
+		instance.phase = name;
 	}
 
 

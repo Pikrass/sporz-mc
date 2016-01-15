@@ -62,6 +62,27 @@ public class MCPlayer extends Player implements ICommandSender {
 			((EntityPlayerMP)entity).setGameType(WorldSettings.GameType.SPECTATOR);
 	}
 
+	public void reconnect(String phase) {
+		if(!isAlive())
+			return;
+
+		if(phase.equals("mutants")) {
+		   if(getState() == State.MUTANT)
+			   teleportZone(SporzMC.getMutantsRoom());
+		   else
+			   teleportRoomOrHub();
+		} else if(phase.equals("doctors")) {
+			if(getRole() == Role.DOCTOR && getState() == State.HUMAN && !isParalysed())
+				teleportZone(SporzMC.getDoctorsRoom());
+			else
+				teleportRoomOrHub();
+		} else if(phase.equals("info")) {
+			teleportRoomOrHub();
+		} else {
+			teleportHub();
+		}
+	}
+
 	private void teleportRoom() {
 		if(this.room != null) {
 			teleport(room);

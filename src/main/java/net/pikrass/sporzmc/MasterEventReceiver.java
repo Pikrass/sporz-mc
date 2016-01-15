@@ -51,6 +51,7 @@ public class MasterEventReceiver implements Master {
 	}
 
 	public void notifyPhase(String name) {
+		SporzMC.setPhase(name);
 	}
 
 	public void notify(Attribution event) {
