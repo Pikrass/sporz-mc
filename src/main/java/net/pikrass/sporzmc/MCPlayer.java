@@ -13,20 +13,24 @@ import net.pikrass.sporz.actions.*;
 import net.pikrass.sporzmc.handlers.*;
 
 import net.minecraft.command.ICommandSender;
+import net.minecraft.command.CommandResultStats;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.management.ServerConfigurationManager;
 import net.minecraft.world.WorldSettings;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.world.World;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Vec3;
 import net.minecraft.util.IChatComponent;
+import net.minecraft.util.ChatComponentText;
 
 import java.util.Map;
 import java.util.HashMap;
 import java.util.SortedSet;
 
-public class MCPlayer extends Player {
+public class MCPlayer extends Player implements ICommandSender {
 	private Map<Action, ActionHandler> handlers;
 	private Vec3 room;
 
@@ -94,7 +98,11 @@ public class MCPlayer extends Player {
 
 
 	public ICommandSender getCommandSender() {
-		return getEntity();
+		Entity entity = getEntity();
+		if(entity != null)
+			return entity;
+		else
+			return this;
 	}
 
 	protected void sendMsg(String message) {
@@ -462,5 +470,68 @@ public class MCPlayer extends Player {
 	}
 	public void stopAsking(SettleLynch action) {
 		genericStopAsking(action);
+	}
+
+
+
+	/* == To fake a ICommandSender when disconnected (useful for playas) == */
+
+	public String func_70005_c_() {
+		return super.getName();
+	}
+
+	@Override
+	public IChatComponent getDisplayName() {
+		return new ChatComponentText(getName());
+	}
+
+	@Override
+	public void addChatMessage(IChatComponent msg) {
+	}
+
+	@Override
+	public boolean canUseCommand(int permLevel, String commandName) {
+		return false;
+	}
+
+	@Override
+	public BlockPos getPosition() {
+		Entity entity = getEntity();
+		if(entity != null)
+			return entity.getPosition();
+		else
+			return new BlockPos(0, 0, 0);
+	}
+
+	@Override
+	public Entity getCommandSenderEntity() {
+		return getEntity();
+	}
+
+	@Override
+	public boolean sendCommandFeedback() {
+		return false;
+	}
+
+	@Override
+	public void setCommandStat(CommandResultStats.Type type, int amount) {
+	}
+
+	@Override
+	public Vec3 getPositionVector() {
+		Entity entity = getEntity();
+		if(entity != null)
+			return entity.getPositionVector();
+		else
+			return new Vec3(0, 0, 0);
+	}
+
+	@Override
+	public World getEntityWorld() {
+		Entity entity = getEntity();
+		if(entity != null)
+			return entity.getEntityWorld();
+		else
+			return null;
 	}
 }
