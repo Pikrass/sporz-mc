@@ -121,6 +121,10 @@ public class SporzMC
 		return instance.masters.contains(sender.getName());
 	}
 
+	public static Set<String> getMasters() {
+		return instance.masters;
+	}
+
 	public static void useCurrentPlayers() {
 		if(instance.game == null)
 			return;

@@ -3,10 +3,12 @@ package net.pikrass.sporzmc;
 import static net.pikrass.sporzmc.util.I18n.*;
 import static net.pikrass.sporzmc.util.MinecraftHelper.*;
 
+import net.minecraft.server.management.ServerConfigurationManager;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.IChatComponent;
 import net.minecraft.command.ICommandSender;
+import net.minecraft.entity.Entity;
 
 import net.pikrass.sporz.*;
 import net.pikrass.sporz.events.*;
@@ -15,6 +17,21 @@ import java.util.Map;
 import java.util.Iterator;
 
 public class MasterEventReceiver implements Master {
+	private void sendMasters(String msg) {
+		ChatComponentText comp = new ChatComponentText(msg);
+		sendMasters(comp);
+	}
+	private void sendMasters(IChatComponent msg) {
+		ServerConfigurationManager manager =
+			MinecraftServer.getServer().getConfigurationManager();
+
+		for(String username : SporzMC.getMasters()) {
+			Entity master = manager.getPlayerByUsername(username);
+			if(master != null) {
+				master.addChatMessage(msg);
+			}
+		}
+	}
 	private void sendMsg(String msg) {
 		ChatComponentText comp = new ChatComponentText(msg);
 		sendMsg(comp);
@@ -37,6 +54,40 @@ public class MasterEventReceiver implements Master {
 	}
 
 	public void notify(Attribution event) {
+		String message = "";
+
+		switch(event.getRole()) {
+		case ASTRONAUT:
+			if(event.getState() == State.HUMAN) {
+				message = _("%s is an astronaut");
+			} else {
+				message = _("%s is a mutant");
+			}
+			break;
+		case DOCTOR:
+			message = _("%s is a doctor");
+			break;
+		case PSYCHOLOGIST:
+			message = _("%s is a psychologist");
+			break;
+		case GENETICIST:
+			message = _("%s is a geneticist");
+			break;
+		case COMPUTER_ENGINEER:
+			message = _("%s is a computer engineer");
+			break;
+		case HACKER:
+			message = _("%s is a hacker");
+			break;
+		case SPY:
+			message = _("%s is a spy");
+			break;
+		case TRAITOR:
+			message = _("%s is a traitor");
+			break;
+		}
+
+		sendMasters(green(String.format(message, event.getPlayer())));
 	}
 
 	public void notify(NewCaptain event) {
@@ -50,9 +101,30 @@ public class MasterEventReceiver implements Master {
 	}
 
 	public void notify(Paralysis event) {
+		sendMasters(blue(String.format(_("Mutants paralysed %s"), event.getTarget())));
 	}
 
 	public void notify(Mutation event) {
+		String message = "";
+		boolean red = false;
+
+		switch(event.getResult()) {
+			case SUCCESS:
+				red = true;
+				message = _("%s has been mutated. They are now a mutant.");
+				break;
+			case FAIL:
+				message = _("An attempt was made to mutate %s, but it failed!");
+				break;
+			case USELESS:
+				message = _("%s has been mutated. It was useless.");
+				break;
+		}
+
+		if(red)
+			sendMasters(red(String.format(message, event.getTarget())));
+		else
+			sendMasters(blue(String.format(message, event.getTarget())));
 	}
 
 	public void notify(Murder event) {
@@ -65,27 +137,115 @@ public class MasterEventReceiver implements Master {
 	}
 
 	public void notify(Healing event) {
+		String message = "";
+		boolean red = false;
+
+		switch(event.getResult()) {
+			case SUCCESS:
+				red = true;
+				message = _("%s has been healed. They are now a human.");
+				break;
+			case FAIL:
+				message = _("An attempt was made to heal %s, but it failed!");
+				break;
+			case USELESS:
+				message = _("%s has been healed. It was useless.");
+				break;
+		}
+
+		if(red)
+			sendMasters(red(String.format(message, event.getTarget())));
+		else
+			sendMasters(blue(String.format(message, event.getTarget())));
 	}
 
 	public void notify(Psychoanalysis event) {
+		if(!event.hasResult()) {
+			sendMasters(blue(String.format(_("%s didn't psychoanalyse anybody"), event.getOrigin())));
+			return;
+		}
+
+		String message = "";
+
+		switch(event.getResult()) {
+			case HUMAN:
+				message = _("%s psychoanalysed %s (human)");
+				break;
+			case MUTANT:
+				message = _("%s psychoanalysed %s (mutant)");
+				break;
+		}
+
+		sendMasters(blue(String.format(message, event.getOrigin(), event.getTarget())));
 	}
 
 	public void notify(Sequencing event) {
+		if(!event.hasResult()) {
+			sendMasters(blue(String.format(_("%s didn't sequence anybody's genome"), event.getOrigin())));
+			return;
+		}
+
+		String message = "";
+
+		switch(event.getResult()) {
+			case STANDARD:
+				message = _("%s sequenced %s (standard)");
+				break;
+			case RESISTANT:
+				message = _("%s sequenced %s (resistant)");
+				break;
+			case HOST:
+				message = _("%s sequenced %s (host)");
+				break;
+		}
+
+		sendMasters(blue(String.format(message, event.getOrigin(), event.getTarget())));
 	}
 
 	public void notify(MutantCount event) {
+		if(!event.hasResult()) {
+			sendMasters(blue(String.format(_("%s didn't count the mutants"), event.getOrigin())));
+			return;
+		}
+
+		sendMasters(blue(String.format(_("%s counted the mutants (%d)"), event.getOrigin(), event.getResult())));
 	}
 
 	public void notify(Psychoanalysis.Hacked event) {
+		String message = "";
+
+		if(!event.hasResult())
+			message = _("%s hacked a psychologist who didn't analyse anybody");
+		else
+			message = _("%s hacked a psychologist who analysed %s");
+
+		sendMasters(blue(String.format(message, event.getHacker(), event.getTarget())));
 	}
 
 	public void notify(Sequencing.Hacked event) {
+		String message = "";
+
+		if(!event.hasResult())
+			message = _("%s hacked a geneticist who didn't analyse anybody");
+		else
+			message = _("%s hacked a geneticist who analysed %s");
+
+		sendMasters(blue(String.format(message, event.getHacker(), event.getTarget())));
 	}
 
 	public void notify(MutantCount.Hacked event) {
+		String message = "";
+
+		if(!event.hasResult())
+			message = _("%s hacked a computer engineer who didn't count the mutants");
+		else
+			message = _("%s hacked a computer engineer who counted the mutants");
+
+		sendMasters(blue(String.format(message, event.getHacker())));
 	}
 
 	public void notify(SpyReport event) {
+		sendMasters(blue(String.format(_("%s spied on %s"), event.getOrigin(), event.getTarget())));
 	}
 
 	public void notify(Lynching event) {

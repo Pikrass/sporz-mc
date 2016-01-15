@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-15 20:57+0900\n"
+"POT-Creation-Date: 2016-01-15 21:38+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -133,7 +133,7 @@ msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandSpy.java:16
 #: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:96
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:178
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:338
 msgid "spy"
 msgstr ""
 
@@ -163,100 +163,43 @@ msgstr ""
 msgid "<player>"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:21
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:26
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:31
-msgid "info"
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:27
+msgid "dev"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:40
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:31
-msgid "========= DAY %d ========="
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:32
+msgid "dev pigs reset OR pigs <num> OR seed <num>"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:42
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:33
-msgid "======== NIGHT %d ========"
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:38
+msgid "dev pigs reset"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:55
-msgid "[captain]"
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:39
+msgid "dev pigs <num>"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:57
-msgid ", [captain]"
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:40
+msgid "dev seed <num>"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:66
-msgid "%s: %s"
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:45
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:104
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:105
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:108
+msgid "pigs"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:90
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:172
-msgid "astronaut"
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:46
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:109
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:110
+msgid "reset"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:91
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:173
-msgid "doctor"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:92
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:174
-msgid "psychologist"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:93
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:175
-msgid "geneticist"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:94
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:176
-msgid "computer engineer"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:95
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:177
-msgid "hacker"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:97
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:179
-msgid "traitor"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:102
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:183
-msgid "resistant"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:103
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:184
-msgid "standard"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:104
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:185
-msgid "host"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:109
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:189
-msgid "human"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:111
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:191
-msgid "mutant"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:114
-msgid "%s, %s, %s"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:116
-msgid "%s, %s"
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:55
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:106
+#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:107
+msgid "seed"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandEnd.java:20
@@ -284,6 +227,111 @@ msgstr ""
 #: src/main/java/net/pikrass/sporzmc/commands/CommandEnd.java:79
 #: src/main/java/net/pikrass/sporzmc/commands/CommandEnd.java:80
 msgid "draw"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:21
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:26
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:31
+msgid "info"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:40
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:48
+msgid "========= DAY %d ========="
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:42
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:50
+msgid "======== NIGHT %d ========"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:55
+msgid "[captain]"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:57
+msgid ", [captain]"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:66
+msgid "%s: %s"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:90
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:332
+msgid "astronaut"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:91
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:333
+msgid "doctor"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:92
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:334
+msgid "psychologist"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:93
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:335
+msgid "geneticist"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:94
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:336
+msgid "computer engineer"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:95
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:337
+msgid "hacker"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:97
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:339
+msgid "traitor"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:102
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:343
+msgid "resistant"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:103
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:344
+msgid "standard"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:104
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:345
+msgid "host"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:109
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:349
+msgid "human"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:111
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:351
+msgid "mutant"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:114
+msgid "%s, %s, %s"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandInfo.java:116
+msgid "%s, %s"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandPlayas.java:20
+msgid "playas"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandPlayas.java:25
+#: src/main/java/net/pikrass/sporzmc/commands/CommandPlayas.java:30
+msgid "playas <player> <cmd> [args...]"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandPlayers.java:20
@@ -479,64 +527,6 @@ msgstr ""
 msgid "Rules"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:21
-#: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:26
-#: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:31
-msgid "start"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:47
-msgid "There aren't enough players for the configured rules"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:27
-msgid "dev"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:32
-msgid "dev pigs reset OR pigs <num> OR seed <num>"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:38
-msgid "dev pigs reset"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:39
-msgid "dev pigs <num>"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:40
-msgid "dev seed <num>"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:45
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:104
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:105
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:108
-msgid "pigs"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:46
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:109
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:110
-msgid "reset"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:55
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:106
-#: src/main/java/net/pikrass/sporzmc/commands/CommandDev.java:107
-msgid "seed"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandPlayas.java:20
-msgid "playas"
-msgstr ""
-
-#: src/main/java/net/pikrass/sporzmc/commands/CommandPlayas.java:25
-#: src/main/java/net/pikrass/sporzmc/commands/CommandPlayas.java:30
-msgid "playas <player> <cmd> [args...]"
-msgstr ""
-
 #: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:74
 msgid "/sporz <command|help>"
 msgstr ""
@@ -552,6 +542,16 @@ msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/commands/CommandSporz.java:131
 msgid "Available sporz commands:"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:21
+#: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:26
+#: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:31
+msgid "start"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/commands/CommandStart.java:47
+msgid "There aren't enough players for the configured rules"
 msgstr ""
 
 #: src/main/java/net/pikrass/sporzmc/MCPlayer.java:122
@@ -821,95 +821,223 @@ msgstr ""
 msgid "As captain of this ship, vote again to break the tie"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:43
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:62
+msgid "%s is an astronaut"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:64
+msgid "%s is a mutant"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:68
+msgid "%s is a doctor"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:71
+msgid "%s is a psychologist"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:74
+msgid "%s is a geneticist"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:77
+msgid "%s is a computer engineer"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:80
+msgid "%s is a hacker"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:83
+msgid "%s is a spy"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:86
+msgid "%s is a traitor"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:94
 msgid "The election is closed. Results follow:"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:47
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:98
 msgid "%s voted for %s"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:49
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:100
 msgid "%s is elected captain!"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:60
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:104
+msgid "Mutants paralysed %s"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:114
+msgid "%s has been mutated. They are now a mutant."
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:117
+msgid "An attempt was made to mutate %s, but it failed!"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:120
+msgid "%s has been mutated. It was useless."
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:132
 msgid "Mutants killed %s"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:62
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:134
 msgid "Doctors killed %s"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:92
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:146
+msgid "%s has been healed. They are now a human."
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:149
+msgid "An attempt was made to heal %s, but it failed!"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:152
+msgid "%s has been healed. It was useless."
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:164
+msgid "%s didn't psychoanalyse anybody"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:172
+msgid "%s psychoanalysed %s (human)"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:175
+msgid "%s psychoanalysed %s (mutant)"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:184
+msgid "%s didn't sequence anybody's genome"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:192
+msgid "%s sequenced %s (standard)"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:195
+msgid "%s sequenced %s (resistant)"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:198
+msgid "%s sequenced %s (host)"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:207
+msgid "%s didn't count the mutants"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:211
+msgid "%s counted the mutants (%d)"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:218
+msgid "%s hacked a psychologist who didn't analyse anybody"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:220
+msgid "%s hacked a psychologist who analysed %s"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:229
+msgid "%s hacked a geneticist who didn't analyse anybody"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:231
+msgid "%s hacked a geneticist who analysed %s"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:240
+msgid "%s hacked a computer engineer who didn't count the mutants"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:242
+msgid "%s hacked a computer engineer who counted the mutants"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:248
+msgid "%s spied on %s"
+msgstr ""
+
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:252
 msgid "Votes are closed. Results follow:"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:98
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:258
 msgid "%d astronaut voted blank"
 msgid_plural "%d astronauts voted blank"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:102
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:262
 msgid "%d astronaut voted for %s"
 msgid_plural "%d astronauts voted for %s"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:109
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:269
 msgid "There is a draw. The captain must settle the vote."
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:111
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:271
 msgid "Nobody is to be killed today"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:113
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:273
 msgid "You decided to kill %s"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:120
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:280
 msgid "The captain chose not to kill anybody"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:122
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:282
 msgid "The captain decided to kill %s"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:130
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:290
 msgid "=== The game is over! Humans win! ==="
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:133
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:293
 msgid "=== The game is over! Mutants win! ==="
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:136
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:296
 msgid "=== The game is over! Nobody won... ==="
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:143
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:303
 msgid "Reason: there is no mutant left"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:145
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:305
 msgid "Reason: there is no human left"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:149
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:309
 msgid "Reason: it's now impossible for mutants to win"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:151
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:311
 msgid "Reason: it's now impossible for humans to win"
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:154
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:314
 msgid "Reason: "
 msgstr ""
 
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:194
-#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:196
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:354
+#: src/main/java/net/pikrass/sporzmc/MasterEventReceiver.java:356
 msgid "%s was %s, %s, %s"
 msgstr ""
