@@ -48,6 +48,8 @@ teleported to a random point inside it.
 Individual rooms are specified as a single point in space, where the
 corresponding player will be teleported.
 
+The game supports English (en) and French (fr).
+
 
 
 
