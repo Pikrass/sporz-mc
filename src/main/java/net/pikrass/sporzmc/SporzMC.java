@@ -64,7 +64,7 @@ public class SporzMC
 	public void preInit(FMLPreInitializationEvent event) {
 		this.config = new Configuration(event.getSuggestedConfigurationFile());
 		this.config.load();
-		I18n.init(Locale.ENGLISH);
+		I18n.init(getConfigLocale());
 		FMLCommonHandler.instance().bus().register(this);
 	}
 
@@ -204,6 +204,19 @@ public class SporzMC
 
 	public static boolean devMode() {
 		return instance.config.get(Configuration.CATEGORY_GENERAL, "dev", false).getBoolean(false);
+	}
+
+	public static Locale getConfigLocale() {
+		String code = instance.config.get(Configuration.CATEGORY_GENERAL, "lang", "en").getString();
+		String[] elems = code.trim().split("_");
+		switch(elems.length) {
+			case 1:
+				return new Locale(elems[0]);
+			case 2:
+				return new Locale(elems[0], elems[1]);
+			default:
+				return new Locale(elems[0], elems[1], elems[2]);
+		}
 	}
 
 
