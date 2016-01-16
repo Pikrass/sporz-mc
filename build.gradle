@@ -94,6 +94,20 @@ processResources {
 	from(sourceSets.main.resources.srcDirs) {
 		exclude 'mcmod.info'
 	}
+
+
+	inputs.dir file('po')
+
+	doLast {
+		fileTree('po').include('*.po').each { File file ->
+			exec {
+				def name = file.getName()
+				def lang = name.substring(0, name.length()-3)
+				commandLine 'msgfmt', '--java2', "-d$buildDir/resources/main/",
+							'-rnet.pikrass.sporzmc.Messages', "-l$lang", "po/$name"
+			}
+		}
+	}
 }
 
 jar {
