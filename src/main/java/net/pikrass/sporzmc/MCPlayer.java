@@ -57,6 +57,9 @@ public class MCPlayer extends Player implements ICommandSender {
 	public void kill() {
 		super.kill();
 		Entity entity = getEntity();
+		if(entity == null)
+			return;
+
 		entity.onKillCommand();
 		if(entity instanceof EntityPlayerMP)
 			((EntityPlayerMP)entity).setGameType(WorldSettings.GameType.SPECTATOR);
