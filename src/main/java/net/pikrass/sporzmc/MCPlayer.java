@@ -61,13 +61,34 @@ public class MCPlayer extends Player implements ICommandSender {
 			return;
 
 		entity.onKillCommand();
+		spectatorMode();
+	}
+
+	public void spectatorMode() {
+		Entity entity = getEntity();
+		if(entity == null)
+			return;
+
 		if(entity instanceof EntityPlayerMP)
 			((EntityPlayerMP)entity).setGameType(WorldSettings.GameType.SPECTATOR);
 	}
 
-	public void reconnect(String phase) {
-		if(!isAlive())
+	public void survivalMode() {
+		Entity entity = getEntity();
+		if(entity == null)
 			return;
+
+		if(entity instanceof EntityPlayerMP)
+			((EntityPlayerMP)entity).setGameType(WorldSettings.GameType.SURVIVAL);
+	}
+
+	public void reconnect(String phase) {
+		if(isAlive()) {
+			survivalMode();
+		} else {
+			spectatorMode();
+			return;
+		}
 
 		if(phase.equals("mutants")) {
 		   if(getState() == State.MUTANT)
@@ -159,6 +180,8 @@ public class MCPlayer extends Player implements ICommandSender {
 			teleportRoom();
 	}
 	public void notify(Attribution event) {
+		survivalMode();
+
 		switch(event.getRole()) {
 		case ASTRONAUT:
 			if(event.getState() == State.HUMAN) {
