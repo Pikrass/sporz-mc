@@ -27,7 +27,7 @@ apply plugin: 'forge'
 
 group =  "net.pikrass.sporzmc"
 archivesBaseName = "sporzmc"
-def dev = false
+def dev = file('DEV').exists()
 
 version = {
 	def gitVersion = "git describe --first-parent --match=v*".execute().text

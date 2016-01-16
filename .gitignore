@@ -4,6 +4,7 @@
 
 # Personal state
 .gradle
+/DEV
 
 # Compiled files
 /build
