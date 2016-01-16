@@ -25,9 +25,33 @@ repositories {
 
 apply plugin: 'forge'
 
-version = "0.0"
 group =  "net.pikrass.sporzmc"
 archivesBaseName = "sporzmc"
+def dev = false
+
+version = {
+	def gitVersion = "git describe --first-parent --match=v*".execute().text
+	def match = gitVersion =~ /^v([0-9.]+(-[a-z][a-z0-9]*)?)(?:-(\d+)-g[0-9a-f]{1,40})?/
+	if(!match)
+		if(dev)
+			return "0.0-dev";
+		else
+			return "0.0";
+
+	if(dev)
+		return match.group(1) + "-dev"
+
+	if(!match.group(3))
+		if(match.group(2))
+			return match.group(1)
+		else
+			return match.group(1) + ".0"
+
+	if(match.group(2))
+		return match.group(1) + "-" + match.group(3)
+	else
+		return match.group(1) + "." + match.group(3)
+}.call()
 
 List libs = [
 	"org.xnap.commons:gettext-commons:0.9.6",

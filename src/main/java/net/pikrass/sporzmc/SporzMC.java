@@ -2,7 +2,7 @@ package net.pikrass.sporzmc;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.Mod.InstanceFactory;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -32,21 +32,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Mod(
-	modid   = SporzMC.MODID,
-	name    = SporzMC.MODNAME,
-	version = SporzMC.MODVER,
+	modid = "Sporz MC",
+	useMetadata = true,
 	serverSideOnly = true,
 	acceptableRemoteVersions = "*"
 )
 
 public class SporzMC
 {
-	public static final String MODID = "Sporz MC";
-	public static final String MODNAME = "Sporz MC";
-	public static final String MODVER = "0.0";
-
-	@Instance(SporzMC.MODID)
-	public static SporzMC instance;
+	private static SporzMC instance = null;
 
 	private CommandSporz command;
 	private Configuration config;
@@ -59,6 +53,12 @@ public class SporzMC
 	private RoundPeriod period;
 	private String phase;
 
+	@InstanceFactory
+	public static SporzMC getInstance() {
+		if(instance == null)
+			instance = new SporzMC();
+		return instance;
+	}
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
