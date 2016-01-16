@@ -13,7 +13,8 @@ public final class I18n
 
 	public static void init(Locale locale) {
 		try {
-			i = I18nFactory.getI18n(I18n.class, locale, I18nFactory.DEFAULT);
+			i = I18nFactory.getI18n(I18n.class, "Messages",
+					locale, I18nFactory.DEFAULT);
 		} catch(MissingResourceException e) {
 			i = new org.xnap.commons.i18n.I18n(
 					new DefaultResourceBundle(Locale.ENGLISH)
