@@ -202,7 +202,7 @@ public class MCPlayer extends Player implements ICommandSender {
 				if(!p.equals(this))
 					names.append(p.getName()+", ");
 			}
-			if(nb > 0) {
+			if(nb > 1) {
 				String group = names.substring(0, names.length()-2);
 				sendMsg(String.format(_("The other doctor is %s", "The other doctors are %s", nb-1), group));
 			}
