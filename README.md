@@ -92,8 +92,8 @@ Once players and rules are configured, the operator can start the game with:
 
 
 
-Déroulement du jeu
-------------------
+During the game
+---------------
 
 Events are displayed in the chatroom. When a player has to perform an action,
 the game tells them so and the corresponding commands become available. They can
