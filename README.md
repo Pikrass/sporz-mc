@@ -1,5 +1,5 @@
-								Sporz MC manual
-				   =========================================
+Sporz MC manual
+===============
 
 This server mod turns Minecraft into a platform to play Sporz online. Sporz is a
 role playing game based on the same principles as Mafia (or Werewolf), but more

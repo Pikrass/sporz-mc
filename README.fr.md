@@ -1,5 +1,5 @@
-					  Guide d'utilisation du mod Sporz MC
-				   =========================================
+Guide d'utilisation du mod Sporz MC
+===================================
 
 Ce mod serveur permet d'utiliser Minecraft comme support pour jouer à Sporz via
 Internet. Sporz est un jeu de rôle inspiré du Village de Thiercelieux, mais bien
